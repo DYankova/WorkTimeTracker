@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2710893323C8C8E300FD80F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710893223C8C8E300FD80F6 /* AppDelegate.swift */; };
+		2710893523C8C8E300FD80F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710893423C8C8E300FD80F6 /* SceneDelegate.swift */; };
+		2710893C23C8C8E300FD80F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2710893B23C8C8E300FD80F6 /* Assets.xcassets */; };
+		2710893F23C8C8E300FD80F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2710893D23C8C8E300FD80F6 /* LaunchScreen.storyboard */; };
+		2710894A23C8C8E300FD80F6 /* WorkTimeTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710894923C8C8E300FD80F6 /* WorkTimeTrackerTests.swift */; };
+		2710896923C8CF4E00FD80F6 /* WorkLogsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710896823C8CF4E00FD80F6 /* WorkLogsListViewController.swift */; };
+		2710896B23C8CF8A00FD80F6 /* ProjectsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710896A23C8CF8A00FD80F6 /* ProjectsListViewController.swift */; };
+		2710897123C8D07E00FD80F6 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897023C8D07E00FD80F6 /* Project.swift */; };
+		2710897323C8D08A00FD80F6 /* WorkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897223C8D08A00FD80F6 /* WorkLog.swift */; };
+		2710897523C8E25500FD80F6 /* AddWorkLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897423C8E25500FD80F6 /* AddWorkLogViewController.swift */; };
+		2710897723C8E37100FD80F6 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897623C8E37100FD80F6 /* ProjectCell.swift */; };
+		2710897923C8E38B00FD80F6 /* WorkLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897823C8E38B00FD80F6 /* WorkLogCell.swift */; };
+		2710897B23C8E4BF00FD80F6 /* WorkLogsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897A23C8E4BF00FD80F6 /* WorkLogsCollectionView.swift */; };
+		2710897D23C8E50600FD80F6 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897C23C8E50600FD80F6 /* DatePickerView.swift */; };
+		2710897F23C8E53B00FD80F6 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897E23C8E53B00FD80F6 /* ProjectViewModel.swift */; };
+		2710898123C8E54700FD80F6 /* WorkLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898023C8E54700FD80F6 /* WorkLogViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2710894623C8C8E300FD80F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2710892723C8C8E300FD80F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2710892E23C8C8E300FD80F6;
+			remoteInfo = WorkTimeTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2710892F23C8C8E300FD80F6 /* WorkTimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkTimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2710893223C8C8E300FD80F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2710893423C8C8E300FD80F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2710893B23C8C8E300FD80F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2710893E23C8C8E300FD80F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2710894023C8C8E300FD80F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2710894523C8C8E300FD80F6 /* WorkTimeTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkTimeTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2710894923C8C8E300FD80F6 /* WorkTimeTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTimeTrackerTests.swift; sourceTree = "<group>"; };
+		2710894B23C8C8E300FD80F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2710896823C8CF4E00FD80F6 /* WorkLogsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogsListViewController.swift; sourceTree = "<group>"; };
+		2710896A23C8CF8A00FD80F6 /* ProjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsListViewController.swift; sourceTree = "<group>"; };
+		2710897023C8D07E00FD80F6 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		2710897223C8D08A00FD80F6 /* WorkLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLog.swift; sourceTree = "<group>"; };
+		2710897423C8E25500FD80F6 /* AddWorkLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkLogViewController.swift; sourceTree = "<group>"; };
+		2710897623C8E37100FD80F6 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
+		2710897823C8E38B00FD80F6 /* WorkLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogCell.swift; sourceTree = "<group>"; };
+		2710897A23C8E4BF00FD80F6 /* WorkLogsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogsCollectionView.swift; sourceTree = "<group>"; };
+		2710897C23C8E50600FD80F6 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		2710897E23C8E53B00FD80F6 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
+		2710898023C8E54700FD80F6 /* WorkLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2710892C23C8C8E300FD80F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2710894223C8C8E300FD80F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2710892623C8C8E300FD80F6 = {
+			isa = PBXGroup;
+			children = (
+				2710893123C8C8E300FD80F6 /* WorkTimeTracker */,
+				2710894823C8C8E300FD80F6 /* WorkTimeTrackerTests */,
+				2710893023C8C8E300FD80F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2710893023C8C8E300FD80F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2710892F23C8C8E300FD80F6 /* WorkTimeTracker.app */,
+				2710894523C8C8E300FD80F6 /* WorkTimeTrackerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2710893123C8C8E300FD80F6 /* WorkTimeTracker */ = {
+			isa = PBXGroup;
+			children = (
+				2710896E23C8D00B00FD80F6 /* ViewModels */,
+				2710896D23C8D00000FD80F6 /* Views */,
+				2710896C23C8CFE100FD80F6 /* Models */,
+				2710896723C8CE9C00FD80F6 /* Controllers */,
+				2710893223C8C8E300FD80F6 /* AppDelegate.swift */,
+				2710893423C8C8E300FD80F6 /* SceneDelegate.swift */,
+				2710893B23C8C8E300FD80F6 /* Assets.xcassets */,
+				2710893D23C8C8E300FD80F6 /* LaunchScreen.storyboard */,
+				2710894023C8C8E300FD80F6 /* Info.plist */,
+			);
+			path = WorkTimeTracker;
+			sourceTree = "<group>";
+		};
+		2710894823C8C8E300FD80F6 /* WorkTimeTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				2710894923C8C8E300FD80F6 /* WorkTimeTrackerTests.swift */,
+				2710894B23C8C8E300FD80F6 /* Info.plist */,
+			);
+			path = WorkTimeTrackerTests;
+			sourceTree = "<group>";
+		};
+		2710896723C8CE9C00FD80F6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2710896A23C8CF8A00FD80F6 /* ProjectsListViewController.swift */,
+				2710896823C8CF4E00FD80F6 /* WorkLogsListViewController.swift */,
+				2710897423C8E25500FD80F6 /* AddWorkLogViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2710896C23C8CFE100FD80F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2710897023C8D07E00FD80F6 /* Project.swift */,
+				2710897223C8D08A00FD80F6 /* WorkLog.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2710896D23C8D00000FD80F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2710897A23C8E4BF00FD80F6 /* WorkLogsCollectionView.swift */,
+				2710896F23C8D02500FD80F6 /* Cells */,
+				2710897C23C8E50600FD80F6 /* DatePickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2710896E23C8D00B00FD80F6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2710897E23C8E53B00FD80F6 /* ProjectViewModel.swift */,
+				2710898023C8E54700FD80F6 /* WorkLogViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2710896F23C8D02500FD80F6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2710897623C8E37100FD80F6 /* ProjectCell.swift */,
+				2710897823C8E38B00FD80F6 /* WorkLogCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2710892E23C8C8E300FD80F6 /* WorkTimeTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2710894E23C8C8E300FD80F6 /* Build configuration list for PBXNativeTarget "WorkTimeTracker" */;
+			buildPhases = (
+				2710892B23C8C8E300FD80F6 /* Sources */,
+				2710892C23C8C8E300FD80F6 /* Frameworks */,
+				2710892D23C8C8E300FD80F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WorkTimeTracker;
+			productName = WorkTimeTracker;
+			productReference = 2710892F23C8C8E300FD80F6 /* WorkTimeTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2710894423C8C8E300FD80F6 /* WorkTimeTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2710895123C8C8E300FD80F6 /* Build configuration list for PBXNativeTarget "WorkTimeTrackerTests" */;
+			buildPhases = (
+				2710894123C8C8E300FD80F6 /* Sources */,
+				2710894223C8C8E300FD80F6 /* Frameworks */,
+				2710894323C8C8E300FD80F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2710894723C8C8E300FD80F6 /* PBXTargetDependency */,
+			);
+			name = WorkTimeTrackerTests;
+			productName = WorkTimeTrackerTests;
+			productReference = 2710894523C8C8E300FD80F6 /* WorkTimeTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2710892723C8C8E300FD80F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Dilyana Yankova";
+				TargetAttributes = {
+					2710892E23C8C8E300FD80F6 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					2710894423C8C8E300FD80F6 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 2710892E23C8C8E300FD80F6;
+					};
+				};
+			};
+			buildConfigurationList = 2710892A23C8C8E300FD80F6 /* Build configuration list for PBXProject "WorkTimeTracker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2710892623C8C8E300FD80F6;
+			productRefGroup = 2710893023C8C8E300FD80F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2710892E23C8C8E300FD80F6 /* WorkTimeTracker */,
+				2710894423C8C8E300FD80F6 /* WorkTimeTrackerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2710892D23C8C8E300FD80F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2710893F23C8C8E300FD80F6 /* LaunchScreen.storyboard in Resources */,
+				2710893C23C8C8E300FD80F6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2710894323C8C8E300FD80F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2710892B23C8C8E300FD80F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2710897923C8E38B00FD80F6 /* WorkLogCell.swift in Sources */,
+				2710893323C8C8E300FD80F6 /* AppDelegate.swift in Sources */,
+				2710898123C8E54700FD80F6 /* WorkLogViewModel.swift in Sources */,
+				2710897B23C8E4BF00FD80F6 /* WorkLogsCollectionView.swift in Sources */,
+				2710897D23C8E50600FD80F6 /* DatePickerView.swift in Sources */,
+				2710897F23C8E53B00FD80F6 /* ProjectViewModel.swift in Sources */,
+				2710896923C8CF4E00FD80F6 /* WorkLogsListViewController.swift in Sources */,
+				2710897523C8E25500FD80F6 /* AddWorkLogViewController.swift in Sources */,
+				2710897723C8E37100FD80F6 /* ProjectCell.swift in Sources */,
+				2710896B23C8CF8A00FD80F6 /* ProjectsListViewController.swift in Sources */,
+				2710897123C8D07E00FD80F6 /* Project.swift in Sources */,
+				2710893523C8C8E300FD80F6 /* SceneDelegate.swift in Sources */,
+				2710897323C8D08A00FD80F6 /* WorkLog.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2710894123C8C8E300FD80F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2710894A23C8C8E300FD80F6 /* WorkTimeTrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2710894723C8C8E300FD80F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2710892E23C8C8E300FD80F6 /* WorkTimeTracker */;
+			targetProxy = 2710894623C8C8E300FD80F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2710893D23C8C8E300FD80F6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2710893E23C8C8E300FD80F6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2710894C23C8C8E300FD80F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2710894D23C8C8E300FD80F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2710894F23C8C8E300FD80F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 687S4PY9AG;
+				INFOPLIST_FILE = WorkTimeTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = diy.WorkTimeTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2710895023C8C8E300FD80F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 687S4PY9AG;
+				INFOPLIST_FILE = WorkTimeTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = diy.WorkTimeTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2710895223C8C8E300FD80F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 687S4PY9AG;
+				INFOPLIST_FILE = WorkTimeTrackerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = diy.WorkTimeTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkTimeTracker.app/WorkTimeTracker";
+			};
+			name = Debug;
+		};
+		2710895323C8C8E300FD80F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 687S4PY9AG;
+				INFOPLIST_FILE = WorkTimeTrackerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = diy.WorkTimeTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkTimeTracker.app/WorkTimeTracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2710892A23C8C8E300FD80F6 /* Build configuration list for PBXProject "WorkTimeTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2710894C23C8C8E300FD80F6 /* Debug */,
+				2710894D23C8C8E300FD80F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2710894E23C8C8E300FD80F6 /* Build configuration list for PBXNativeTarget "WorkTimeTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2710894F23C8C8E300FD80F6 /* Debug */,
+				2710895023C8C8E300FD80F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2710895123C8C8E300FD80F6 /* Build configuration list for PBXNativeTarget "WorkTimeTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2710895223C8C8E300FD80F6 /* Debug */,
+				2710895323C8C8E300FD80F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2710892723C8C8E300FD80F6 /* Project object */;
+}
