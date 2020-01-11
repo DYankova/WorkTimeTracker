@@ -6,6 +6,14 @@
          contextName = "Defaults.getProjectsFromUserdefaults():Defaults.swift">
       </ContextState>
       <ContextState
+         contextName = "ProjectViewModel.addToWorkLogs(workLog:):ProjectViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "workLogs">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "Defaults.updatePairsToUserdefaults():Defaults.swift">
          <PersistentStrings>
             <PersistentString

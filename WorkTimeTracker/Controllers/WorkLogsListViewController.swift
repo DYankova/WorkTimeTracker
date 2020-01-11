@@ -29,7 +29,6 @@ class WorkLogsListViewController:  UIViewController {
     lazy var workHoursTextField: AddTextView = {
         let textField = AddTextView()
         textField.text = "0h"
-        textField.keyboardType = .numberPad
         return textField
     }()
     
@@ -39,15 +38,7 @@ class WorkLogsListViewController:  UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        let visma1 = WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: "13", date: "21-2-19"))
-        let visma2 = WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: "13", date: "21-2-19"))
-        let visma3 = WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: "13", date: "21-2-19"))
-     
-        projectViewModel.addToWorkLogs(workLog: visma1)
-        projectViewModel.addToWorkLogs(workLog: visma2)
-        projectViewModel.addToWorkLogs(workLog: visma3)
-        
+        projectViewModel.decode()
         view.backgroundColor = .white
         view.addSubview(collectionView)
         view.addSubview(addBtn)

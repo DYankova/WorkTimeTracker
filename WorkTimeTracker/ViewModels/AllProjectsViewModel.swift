@@ -8,15 +8,23 @@
 
 import UIKit
 
-struct AllProjectsViewModel: Codable {
+class AllProjectsViewModel: Codable {
     var projects = [ProjectViewModel]()
     
-    mutating func addToProjects(project: ProjectViewModel){
-        self.projects.append(project)
-      
+    init() {
+     if let data = UserDefaults.standard.value(forKey:"projects") as? Data {
+        let decodedProjects = try? PropertyListDecoder().decode(Array<ProjectViewModel>.self, from: data)
+              projects = decodedProjects ?? []
+      }
     }
     
-    mutating func deleteFromProjects(sender: Int){
+    func addToProjects(project: ProjectViewModel){
+        self.projects.append(project)
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(projects), forKey: "projects")
+    }
+    
+    func deleteFromProjects(sender: Int){
         self.projects.remove(at: sender)
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(projects), forKey: "projects")
     }
 }

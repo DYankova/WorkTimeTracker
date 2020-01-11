@@ -26,19 +26,7 @@ class ProjectsListViewController:  UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let data = UserDefaults.standard.value(forKey:"projects") as? Data {
-               let songs2 = try? PropertyListDecoder().decode(Array<ProjectViewModel>.self, from: data)
-               projectViewModels.projects = songs2 ?? []
-           }
-//        let visma1 = ProjectViewModel(project: Project(name: "Visma", totalHours: 3), workLogs: [])
-//        let visma2 = ProjectViewModel(project: Project(name: "Visma", totalHours: 23), workLogs: [])
-//        let visma3 = ProjectViewModel(project: Project(name: "Vismasadasfdfdsafa", totalHours: 31), workLogs: [])
-//
-//        projectViewModels.addToProjects(project: visma1)
-//        projectViewModels.addToProjects(project: visma2)
-//        projectViewModels.addToProjects(project: visma3)
-        
+            
         view.backgroundColor = .white
         view.addSubview(collectionView)
         view.addSubview(addBtn)
@@ -72,21 +60,19 @@ class ProjectsListViewController:  UIViewController {
     @objc func clicked(){
         projectViewModels.addToProjects(project: ProjectViewModel(project: Project(name: projectTitleTextField.text, totalHours : 0), workLogs: []))
 
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(projectViewModels.projects), forKey: "projects")
+      
         collectionView.reloadData()
     }
     
     @objc func deleteRecord(sender: UIButton){
         projectViewModels.deleteFromProjects(sender: sender.tag)
         collectionView.reloadData()
-
     }
 }
 
 extension ProjectsListViewController:  UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
         return projectViewModels.projects.count
     }
     

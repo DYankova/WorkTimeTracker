@@ -8,16 +8,18 @@
 
 import UIKit
 
-struct WorkLogViewModel : Codable {
+class WorkLogViewModel : Codable {
     let workLog: WorkLog
     
      init(workLog: WorkLog) {
       self.workLog = workLog
     }
     
+    //TODO - into real date
     var date: String {
         return  String(workLog.date)
     }
+    
     //TODO
     var hours: Int {
    

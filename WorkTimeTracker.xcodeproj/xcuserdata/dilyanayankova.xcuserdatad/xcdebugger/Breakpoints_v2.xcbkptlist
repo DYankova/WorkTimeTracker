@@ -78,8 +78,8 @@
             filePath = "WorkTimeTracker/ViewModels/AllProjectsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "addToProjects(project:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "WorkTimeTracker/ViewModels/AllProjectsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "addToProjects(project:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "WorkTimeTracker/ViewModels/ProjectViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "calculateTotalHours(workLogs:)"
             landmarkType = "7">
             <Locations>
@@ -190,8 +190,8 @@
             filePath = "WorkTimeTracker/ViewModels/ProjectViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "deleteFromProjects(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,25 +206,9 @@
             filePath = "WorkTimeTracker/Controllers/WorkLogsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "deleteRecord(sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F8B444EE-8A41-4A27-9A9B-FDE385D09D2F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WorkTimeTracker/Controllers/ProjectsListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -238,8 +222,8 @@
             filePath = "WorkTimeTracker/Controllers/ProjectsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,8 +238,8 @@
             filePath = "WorkTimeTracker/Services/Defaults.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "getPairsFromUserdefaults()"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +254,8 @@
             filePath = "WorkTimeTracker/Controllers/ProjectsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "clicked()"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +270,8 @@
             filePath = "WorkTimeTracker/Controllers/ProjectsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "clicked()"
             landmarkType = "7">
          </BreakpointContent>
@@ -305,38 +289,6 @@
             startingLineNumber = "20"
             endingLineNumber = "20"
             landmarkName = "updatePairsToUserdefaults()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "11214877-D907-41BD-955A-156C9C126350"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WorkTimeTracker/Controllers/ProjectsListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CD4D9B7A-11F8-4D20-9FEF-DA3FF1767AE8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WorkTimeTracker/Controllers/ProjectsListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -446,6 +398,178 @@
                   offsetFromSymbolStart = "111">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "694DC7F7-9E2A-4415-BD2F-52DA78542B21"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WorkTimeTracker/Controllers/WorkLogsListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "WorkLogsListViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "694DC7F7-9E2A-4415-BD2F-52DA78542B21 - c4603aa98760a915"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WorkTimeTracker.WorkLogsListViewController.projectViewModel.getter : Swift.Optional&lt;WorkTimeTracker.ProjectViewModel&gt;"
+                  moduleName = "WorkTimeTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dilyanayankova/Desktop/WorkTimeTracker/WorkTimeTracker/Controllers/WorkLogsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "169">
+               </Location>
+               <Location
+                  uuid = "694DC7F7-9E2A-4415-BD2F-52DA78542B21 - dc5b452eef4e95e1"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WorkTimeTracker.WorkLogsListViewController.projectViewModel.setter : Swift.Optional&lt;WorkTimeTracker.ProjectViewModel&gt;"
+                  moduleName = "WorkTimeTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dilyanayankova/Desktop/WorkTimeTracker/WorkTimeTracker/Controllers/WorkLogsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "258">
+               </Location>
+               <Location
+                  uuid = "694DC7F7-9E2A-4415-BD2F-52DA78542B21 - b21c88234e402016"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WorkTimeTracker.WorkLogsListViewController.projectViewModel.modify : Swift.Optional&lt;WorkTimeTracker.ProjectViewModel&gt;"
+                  moduleName = "WorkTimeTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dilyanayankova/Desktop/WorkTimeTracker/WorkTimeTracker/Controllers/WorkLogsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "694DC7F7-9E2A-4415-BD2F-52DA78542B21 - 984dc93f5cf0b220"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WorkTimeTracker.WorkLogsListViewController.projectViewModel.modify : Swift.Optional&lt;WorkTimeTracker.ProjectViewModel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "WorkTimeTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dilyanayankova/Desktop/WorkTimeTracker/WorkTimeTracker/Controllers/WorkLogsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "694DC7F7-9E2A-4415-BD2F-52DA78542B21 - 88ed27b084555402"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WorkTimeTracker.WorkLogsListViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; WorkTimeTracker.WorkLogsListViewController"
+                  moduleName = "WorkTimeTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dilyanayankova/Desktop/WorkTimeTracker/WorkTimeTracker/Controllers/WorkLogsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "182">
+               </Location>
+               <Location
+                  uuid = "694DC7F7-9E2A-4415-BD2F-52DA78542B21 - a4224da2533b0210"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WorkTimeTracker.WorkLogsListViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;WorkTimeTracker.WorkLogsListViewController&gt;"
+                  moduleName = "WorkTimeTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dilyanayankova/Desktop/WorkTimeTracker/WorkTimeTracker/Controllers/WorkLogsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "119">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86BE1254-6057-49CA-8726-6D9FA83E04C8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WorkTimeTracker/ViewModels/ProjectViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "calculateTotalHours(workLogs:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0AF482F1-D3F8-43D2-BC31-514897BD944B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WorkTimeTracker/ViewModels/ProjectViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "addToWorkLogs(workLog:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77A55C1A-5512-439C-98C4-4E4B7F7ED5E0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WorkTimeTracker/ViewModels/ProjectViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "decode()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "44B06CAB-18CF-44B4-ADA9-B3562185B8F3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WorkTimeTracker/ViewModels/ProjectViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "decode()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

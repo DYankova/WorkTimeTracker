@@ -8,10 +8,10 @@
 
 import UIKit
 
-struct ProjectViewModel: Codable {
+class ProjectViewModel: Codable {
     let project: Project
     var workLogs : [WorkLogViewModel]
-   
+     
     init(project: Project, workLogs : [WorkLogViewModel]) {
         self.project = project
         self.workLogs = workLogs
@@ -25,19 +25,23 @@ struct ProjectViewModel: Codable {
         return calculateTotalHours(workLogs: workLogs)
     }
     
+  func decode(){
+    if let data = UserDefaults.standard.value(forKey:"workLogs") as? Data {
+      let decodedWorkLogs = try? PropertyListDecoder().decode(Array<WorkLogViewModel>.self, from: data)
+        workLogs = decodedWorkLogs ?? []
+    }
+}
     func calculateTotalHours(workLogs: [WorkLogViewModel]) -> Int {
         return workLogs.reduce(0) { $0 + $1.hours }
     }
-    
-    func createProject(){
-        
-    }
-    
-    mutating func addToWorkLogs(workLog: WorkLogViewModel){
+  
+    func addToWorkLogs(workLog: WorkLogViewModel){
         self.workLogs.append(workLog)
+         UserDefaults.standard.set(try? PropertyListEncoder().encode(workLogs), forKey: "workLogs")
     }
      
-    mutating func deleteFromProjects(sender: Int){
+    func deleteFromProjects(sender: Int){
         self.workLogs.remove(at: sender)
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(workLogs), forKey: "workLogs")
     }
 }
