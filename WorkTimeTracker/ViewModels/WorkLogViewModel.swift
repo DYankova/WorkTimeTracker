@@ -6,4 +6,21 @@
 //  Copyright © 2020 Dilyana Yankova. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct WorkLogViewModel {
+    let workLog: WorkLog
+    
+     init(workLog: WorkLog) {
+      self.workLog = workLog
+    }
+    
+    var date: Date {
+        return workLog.date
+    }
+    
+    var hours: Int {
+        return workLog.hours
+    }
+    
+}

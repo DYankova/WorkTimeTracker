@@ -9,8 +9,8 @@
 import UIKit
 
 struct Project {
-    let name : String?
-    let totalHours: Int?
+    let name : String
+    let totalHours: Int
     
     init(name: String, totalHours: Int) {
         self.name = name

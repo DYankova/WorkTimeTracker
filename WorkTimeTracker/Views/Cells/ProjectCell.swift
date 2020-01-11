@@ -18,18 +18,20 @@ class ProjectCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    var parent: UIViewController?
+    
     lazy var projectName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "Robonto", size: 20.0)
-        label.textColor = UIColor.black
+        label.textColor = UIColor.darkGray
         return label
     }()
 
     lazy var totalHoursLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Robonto", size: 14)
+        label.font = UIFont(name: "Robonto", size: 20)
         label.textColor = UIColor.lightGray
         return label
     }()
@@ -38,7 +40,9 @@ class ProjectCell: UICollectionViewCell {
         let btn = UIButton()
         btn.tintColor = .clear
         btn.setTitleColor(.blue, for: .normal)
-        btn.setTitle("X", for: .normal)
+        if let image = UIImage(named: "delete") {
+            btn.setImage(image, for: .normal)
+        }
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -47,20 +51,16 @@ class ProjectCell: UICollectionViewCell {
         addSubview(projectName)
         addSubview(totalHoursLabel)
         addSubview(deleteButton)
-
-        projectName.heightAnchor.constraint(equalToConstant: 30).isActive = true
+ 
         projectName.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        projectName.widthAnchor.constraint(equalToConstant: 250 ).isActive = true
+        projectName.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        
+        deleteButton.topAnchor.constraint(equalTo: projectName.topAnchor).isActive = true
+        deleteButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+        
+        totalHoursLabel.topAnchor.constraint(equalTo: projectName.topAnchor).isActive = true
+        totalHoursLabel.rightAnchor.constraint(equalTo: deleteButton.leftAnchor, constant: -20).isActive = true
 
-        totalHoursLabel.topAnchor.constraint(equalTo: projectName.bottomAnchor, constant: 5).isActive = true
-
-//        codeLabelCuote.trailingAnchor.constraint(equalTo: deleteButton.leadingAnchor).isActive = true
-//
-//        nameLabelCuote.topAnchor.constraint(equalTo: codeLabelBase.bottomAnchor, constant: 5).isActive = true
-//        nameLabelCuote.trailingAnchor.constraint(equalTo: deleteButton.leadingAnchor).isActive = true
-//
-//        deleteButton.topAnchor.constraint(equalTo: codeLabelBase.topAnchor, constant: 15).isActive = true
-        deleteButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        deleteButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
     }
 }

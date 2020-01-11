@@ -9,9 +9,9 @@
 import UIKit
 
 struct WorkLog {
-    let projectName : String?
-    let hours: Int?
-    let date: Date?
+    let projectName : String
+    let hours: Int
+    let date: Date
     
     init(projectName: String, hours: Int, date: Date) {
         self.projectName = projectName
