@@ -40,7 +40,7 @@ class ProjectCell: UICollectionViewCell {
   
     lazy var deleteButton: UIButton = {
         let btn = UIButton()
-        btn.tintColor = .clear
+        btn.tintColor = .gray
         btn.setTitleColor(.blue, for: .normal)
         if let image = UIImage(named: "delete") {
             btn.setImage(image, for: .normal)

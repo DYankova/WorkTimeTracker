@@ -8,8 +8,8 @@
 
 import UIKit
 
-class AddTextField : UITextView {
-    lazy var keyboardAccessoryView = KeyboardAccessoryView()
+class AddTextView : UITextView {
+  
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         setup()
@@ -31,4 +31,5 @@ class AddTextField : UITextView {
         isUserInteractionEnabled = true
         
     }
+    
 }

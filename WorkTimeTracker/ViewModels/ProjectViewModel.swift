@@ -26,8 +26,7 @@ struct ProjectViewModel {
     }
     
     func calculateTotalHours(workLogs: [WorkLogViewModel]) -> Int {
-        //TODO calculate
-        return 10
+        return workLogs.reduce(0) { $0 + $1.hours }
     }
     
     func createProject(){
@@ -37,9 +36,8 @@ struct ProjectViewModel {
     mutating func addToWorkLogs(workLog: WorkLogViewModel){
         self.workLogs.append(workLog)
     }
-    
-    
-    mutating func deleteFromProjects(sender: UIButton, workLog: WorkLogViewModel){
-        self.workLogs.remove(at: sender.tag)
+     
+    mutating func deleteFromProjects(sender: Int){
+        self.workLogs.remove(at: sender)
     }
 }

@@ -15,7 +15,7 @@ struct AllProjectsViewModel {
         self.projects.append(project)
     }
     
-    mutating func deleteFromProjects(sender: UIButton, project: ProjectViewModel){
-        self.projects.remove(at: sender.tag)
+    mutating func deleteFromProjects(sender: Int){
+        self.projects.remove(at: sender)
     }
 }

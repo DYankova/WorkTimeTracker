@@ -18,8 +18,6 @@
 		2710897323C8D08A00FD80F6 /* WorkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897223C8D08A00FD80F6 /* WorkLog.swift */; };
 		2710897523C8E25500FD80F6 /* AddWorkLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897423C8E25500FD80F6 /* AddWorkLogViewController.swift */; };
 		2710897723C8E37100FD80F6 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897623C8E37100FD80F6 /* ProjectCell.swift */; };
-		2710897923C8E38B00FD80F6 /* WorkLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897823C8E38B00FD80F6 /* WorkLogCell.swift */; };
-		2710897B23C8E4BF00FD80F6 /* WorkLogsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897A23C8E4BF00FD80F6 /* WorkLogsCollectionView.swift */; };
 		2710897D23C8E50600FD80F6 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897C23C8E50600FD80F6 /* DatePickerView.swift */; };
 		2710897F23C8E53B00FD80F6 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897E23C8E53B00FD80F6 /* ProjectViewModel.swift */; };
 		2710898123C8E54700FD80F6 /* WorkLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898023C8E54700FD80F6 /* WorkLogViewModel.swift */; };
@@ -54,8 +52,6 @@
 		2710897223C8D08A00FD80F6 /* WorkLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLog.swift; sourceTree = "<group>"; };
 		2710897423C8E25500FD80F6 /* AddWorkLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkLogViewController.swift; sourceTree = "<group>"; };
 		2710897623C8E37100FD80F6 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
-		2710897823C8E38B00FD80F6 /* WorkLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogCell.swift; sourceTree = "<group>"; };
-		2710897A23C8E4BF00FD80F6 /* WorkLogsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogsCollectionView.swift; sourceTree = "<group>"; };
 		2710897C23C8E50600FD80F6 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		2710897E23C8E53B00FD80F6 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		2710898023C8E54700FD80F6 /* WorkLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogViewModel.swift; sourceTree = "<group>"; };
@@ -147,7 +143,6 @@
 		2710896D23C8D00000FD80F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2710897A23C8E4BF00FD80F6 /* WorkLogsCollectionView.swift */,
 				2710898423C915BF00FD80F6 /* AddButton.swift */,
 				2710898623C9163200FD80F6 /* AddTextField.swift */,
 				2710897C23C8E50600FD80F6 /* DatePickerView.swift */,
@@ -170,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				2710897623C8E37100FD80F6 /* ProjectCell.swift */,
-				2710897823C8E38B00FD80F6 /* WorkLogCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -277,10 +271,8 @@
 			files = (
 				2710898523C915BF00FD80F6 /* AddButton.swift in Sources */,
 				2710898323C8FB9B00FD80F6 /* AllProjectsViewModel.swift in Sources */,
-				2710897923C8E38B00FD80F6 /* WorkLogCell.swift in Sources */,
 				2710893323C8C8E300FD80F6 /* AppDelegate.swift in Sources */,
 				2710898123C8E54700FD80F6 /* WorkLogViewModel.swift in Sources */,
-				2710897B23C8E4BF00FD80F6 /* WorkLogsCollectionView.swift in Sources */,
 				2710897D23C8E50600FD80F6 /* DatePickerView.swift in Sources */,
 				2710897F23C8E53B00FD80F6 /* ProjectViewModel.swift in Sources */,
 				2710896923C8CF4E00FD80F6 /* WorkLogsListViewController.swift in Sources */,

@@ -18,9 +18,10 @@ struct WorkLogViewModel {
     var date: String {
         return  String(workLog.date)
     }
-    
+    //TODO
     var hours: Int {
-        return workLog.hours
+   
+        return Int(workLog.hours) ?? 0
     }
     
 }

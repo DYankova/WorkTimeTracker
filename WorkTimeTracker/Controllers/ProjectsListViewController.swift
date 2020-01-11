@@ -20,7 +20,7 @@ class ProjectsListViewController:  UIViewController {
         return cv
      }()
 
-    lazy var  projectTitleTextField = AddTextField()
+    lazy var  projectTitleTextField = AddTextView()
 
     lazy var addBtn = AddButton()
 
@@ -50,14 +50,14 @@ class ProjectsListViewController:  UIViewController {
     func setupConstraints() {
         addBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
         addBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        addBtn.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        addBtn.widthAnchor.constraint(equalToConstant: 70).isActive = true
         addBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
         addBtn.addTarget(self, action: #selector(clicked), for: UIControl.Event.touchUpInside)
            
         projectTitleTextField.topAnchor.constraint(equalTo: addBtn.topAnchor).isActive = true
         projectTitleTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         projectTitleTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        projectTitleTextField.rightAnchor.constraint(equalTo: addBtn.leftAnchor, constant: -30).isActive = true
+        projectTitleTextField.rightAnchor.constraint(equalTo: addBtn.leftAnchor, constant: -20).isActive = true
        
         collectionView.topAnchor.constraint(equalTo: projectTitleTextField.bottomAnchor, constant: 50).isActive = true
         collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -67,6 +67,11 @@ class ProjectsListViewController:  UIViewController {
         
     @objc func clicked(){
         projectViewModels.addToProjects(project: ProjectViewModel(project: Project(name: projectTitleTextField.text, totalHours : 0), workLogs: []))
+        collectionView.reloadData()
+    }
+    
+    @objc func deleteRecord(sender: UIButton){
+        projectViewModels.deleteFromProjects(sender: sender.tag)
         collectionView.reloadData()
     }
 }
@@ -82,6 +87,8 @@ extension ProjectsListViewController:  UICollectionViewDataSource {
 
         projectCell.projectName.text = projectViewModels.projects[indexPath.item].name
         projectCell.totalHoursLabel.text = String(projectViewModels.projects[indexPath.item].totaHours)
+        projectCell.deleteButton.tag = indexPath.item
+        projectCell.deleteButton.addTarget(self, action: #selector(deleteRecord(sender:)), for: UIControl.Event.touchUpInside)
         return projectCell
     }
 }
