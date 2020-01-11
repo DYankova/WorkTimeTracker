@@ -22,8 +22,6 @@ class ProjectCell: UICollectionViewCell {
     var navigationController: UINavigationController?
     var viewController : UIViewController?
     
-    
-    var delegate: YourCellDelegate!
     lazy var projectName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -45,21 +45,8 @@ class ProjectsListViewController:  UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.register(ProjectCell.self, forCellWithReuseIdentifier: "ProjectCell")
         setupConstraints()
+    }
         
-        navigationItem.title = "Partner_lookup.page_title.text"
-        setNavigationBar()
-    }
-    
-    func setNavigationBar() {
-        let screenSize: CGRect = UIScreen.main.bounds
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 15, width: screenSize.width, height: 70))
-        let navItem = UINavigationItem(title: "cell name title")
-        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.close, target: nil, action: #selector(clicked))
-        navItem.leftBarButtonItem = doneItem
-        navBar.setItems([navItem], animated: false)
-        self.view.addSubview(navBar)
-    }
-    
     func setupConstraints() {
         addBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
         addBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
@@ -111,7 +98,6 @@ extension ProjectsListViewController:  UICollectionViewDelegate, UICollectionVie
        controller.projectViewModel = project
        self.present(controller, animated: true, completion: nil)
        //        self.navigationController?.pushViewController(controller, animated: true)
-       
        
          print("User tapped on item \(indexPath.row)")
    }

@@ -11,9 +11,9 @@ import UIKit
 struct WorkLog {
     let projectName : String
     let hours: Int
-    let date: Date
+    let date: String
     
-    init(projectName: String, hours: Int, date: Date) {
+    init(projectName: String, hours: Int, date: String) {
         self.projectName = projectName
         self.hours = hours
         self.date = date

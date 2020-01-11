@@ -10,10 +10,8 @@ import UIKit
 
 struct ProjectViewModel {
     let project: Project
-    let workLogs : [WorkLogViewModel]
+    var workLogs : [WorkLogViewModel]
    
-    var onProjectSelected: ((_ project: ProjectViewModel) -> Void)?
-    
     init(project: Project, workLogs : [WorkLogViewModel]) {
         self.project = project
         self.workLogs = workLogs
@@ -36,5 +34,12 @@ struct ProjectViewModel {
         
     }
     
+    mutating func addToWorkLogs(workLog: WorkLogViewModel){
+        self.workLogs.append(workLog)
+    }
     
+    
+    mutating func deleteFromProjects(sender: UIButton, workLog: WorkLogViewModel){
+        self.workLogs.remove(at: sender.tag)
+    }
 }

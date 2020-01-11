@@ -15,8 +15,8 @@ struct WorkLogViewModel {
       self.workLog = workLog
     }
     
-    var date: Date {
-        return workLog.date
+    var date: String {
+        return  String(workLog.date)
     }
     
     var hours: Int {
