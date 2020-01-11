@@ -19,8 +19,10 @@ class WorkLogsListViewController:  UIViewController {
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
      }()
-
+    
     lazy var  projectTitleTextField = AddTextField()
+    
+    lazy var  datePicker = UIDatePicker()
     
     lazy var addBtn = AddButton()
 
@@ -48,6 +50,7 @@ class WorkLogsListViewController:  UIViewController {
         
         navigationItem.title = "Partner_lookup.page_title.text"
         setNavigationBar()
+        showDatePicker()
     }
     
     func setNavigationBar() {
@@ -62,7 +65,8 @@ class WorkLogsListViewController:  UIViewController {
     
     @objc func close() {
        self.dismiss(animated: true, completion: nil)
-   }
+    }
+    
     func setupConstraints() {
         addBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
         addBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
@@ -82,7 +86,7 @@ class WorkLogsListViewController:  UIViewController {
     }
         
     @objc func clicked(){
-//        projectViewModel.addToWorkLogs(project: ProjectViewModel(project: Project(name: projectTitleTextField.text, totalHours : 0), workLogs: []))
+        projectViewModel.addToWorkLogs(workLog: WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: 5, date: projectTitleTextField.text)))
         collectionView.reloadData()
     }
 }
@@ -124,4 +128,34 @@ extension WorkLogsListViewController:  UICollectionViewDelegate, UICollectionVie
       // Dispose of any resources that can be recreated.
   }
           
+}
+
+extension WorkLogsListViewController {
+    
+     func showDatePicker(){
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
+
+        projectTitleTextField.inputAccessoryView = toolbar
+        projectTitleTextField.inputView = datePicker
+
+     }
+
+      @objc func donedatePicker(){
+
+       let formatter = DateFormatter()
+       formatter.dateFormat = "dd-MM-yyyy"
+        projectTitleTextField.text = formatter.string(from: datePicker.date)
+       self.view.endEditing(true)
+     }
+
+     @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+      }
 }

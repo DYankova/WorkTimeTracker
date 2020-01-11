@@ -21,7 +21,7 @@ class ProjectsListViewController:  UIViewController {
      }()
 
     lazy var  projectTitleTextField = AddTextField()
-    
+
     lazy var addBtn = AddButton()
 
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class ProjectsListViewController:  UIViewController {
         collectionView.register(ProjectCell.self, forCellWithReuseIdentifier: "ProjectCell")
         setupConstraints()
     }
-        
+     
     func setupConstraints() {
         addBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
         addBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true

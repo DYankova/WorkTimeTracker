@@ -9,7 +9,7 @@
 import UIKit
 
 class AddTextField : UITextView {
-    
+    lazy var keyboardAccessoryView = KeyboardAccessoryView()
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         setup()

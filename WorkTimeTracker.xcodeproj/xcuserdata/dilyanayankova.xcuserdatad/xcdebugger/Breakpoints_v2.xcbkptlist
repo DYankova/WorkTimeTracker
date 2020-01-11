@@ -103,22 +103,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "26A903B3-BAD5-43E1-BF89-5CDBD2F8D6E5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WorkTimeTracker/Controllers/ProjectsListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4D25D65A-0084-4F30-8E35-1C8C18F4FCCB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -129,6 +113,70 @@
             startingLineNumber = "16"
             endingLineNumber = "16"
             landmarkName = "init(workLog:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8994CCA-4A2A-45CC-A124-9891769DCCFD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WorkTimeTracker/Views/DatePickerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "init(frame:textContainer:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F8994CCA-4A2A-45CC-A124-9891769DCCFD - 7aecaafad8a2d9d0"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WorkTimeTracker.DatePickerView.__allocating_init(frame: __C.CGRect, textContainer: Swift.Optional&lt;__C.NSTextContainer&gt;) -&gt; WorkTimeTracker.DatePickerView"
+                  moduleName = "WorkTimeTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dilyanayankova/Desktop/WorkTimeTracker/WorkTimeTracker/Views/DatePickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "14">
+               </Location>
+               <Location
+                  uuid = "F8994CCA-4A2A-45CC-A124-9891769DCCFD - b85ef9088870834b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WorkTimeTracker.DatePickerView.init(frame: __C.CGRect, textContainer: Swift.Optional&lt;__C.NSTextContainer&gt;) -&gt; WorkTimeTracker.DatePickerView"
+                  moduleName = "WorkTimeTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dilyanayankova/Desktop/WorkTimeTracker/WorkTimeTracker/Views/DatePickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "233">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "829AF6F5-9CF6-4D32-97C0-E34CB9FABCF6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WorkTimeTracker/Views/DatePickerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "init(frame:textContainer:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
