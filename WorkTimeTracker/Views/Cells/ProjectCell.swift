@@ -9,6 +9,7 @@
 import UIKit
 
 class ProjectCell: UICollectionViewCell {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -18,8 +19,11 @@ class ProjectCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    var parent: UIViewController?
+    var navigationController: UINavigationController?
+    var viewController : UIViewController?
     
+    
+    var delegate: YourCellDelegate!
     lazy var projectName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -64,3 +68,4 @@ class ProjectCell: UICollectionViewCell {
 
     }
 }
+

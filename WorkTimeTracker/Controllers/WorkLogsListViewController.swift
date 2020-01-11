@@ -10,8 +10,11 @@ import UIKit
 
 class WorkLogsListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
 
+    var projectViewModel : ProjectViewModel?
    override func viewDidLoad() {
             super.viewDidLoad()
+//            print(projectViewModel?.name)
+    
             view.backgroundColor = .white
             view.addSubview(collectionView)
             collectionView.delegate = self

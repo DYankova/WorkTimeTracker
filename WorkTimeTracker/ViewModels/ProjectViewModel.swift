@@ -12,6 +12,8 @@ struct ProjectViewModel {
     let project: Project
     let workLogs : [WorkLogViewModel]
    
+    var onProjectSelected: ((_ project: ProjectViewModel) -> Void)?
+    
     init(project: Project, workLogs : [WorkLogViewModel]) {
         self.project = project
         self.workLogs = workLogs
@@ -33,4 +35,6 @@ struct ProjectViewModel {
     func createProject(){
         
     }
+    
+    
 }
