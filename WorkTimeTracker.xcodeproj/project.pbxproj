@@ -24,6 +24,7 @@
 		2710898323C8FB9B00FD80F6 /* AllProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898223C8FB9B00FD80F6 /* AllProjectsViewModel.swift */; };
 		2710898523C915BF00FD80F6 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898423C915BF00FD80F6 /* AddButton.swift */; };
 		2710898723C9163200FD80F6 /* AddTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898623C9163200FD80F6 /* AddTextField.swift */; };
+		2710898B23CA479C00FD80F6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898A23CA479C00FD80F6 /* Defaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		2710898223C8FB9B00FD80F6 /* AllProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProjectsViewModel.swift; sourceTree = "<group>"; };
 		2710898423C915BF00FD80F6 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		2710898623C9163200FD80F6 /* AddTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextField.swift; sourceTree = "<group>"; };
+		2710898A23CA479C00FD80F6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				2710896D23C8D00000FD80F6 /* Views */,
 				2710896C23C8CFE100FD80F6 /* Models */,
 				2710896723C8CE9C00FD80F6 /* Controllers */,
+				2710898923CA473600FD80F6 /* Services */,
 				2710893223C8C8E300FD80F6 /* AppDelegate.swift */,
 				2710893423C8C8E300FD80F6 /* SceneDelegate.swift */,
 				2710893B23C8C8E300FD80F6 /* Assets.xcassets */,
@@ -167,6 +170,14 @@
 				2710897623C8E37100FD80F6 /* ProjectCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		2710898923CA473600FD80F6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2710898A23CA479C00FD80F6 /* Defaults.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 				2710896B23C8CF8A00FD80F6 /* ProjectsListViewController.swift in Sources */,
 				2710897123C8D07E00FD80F6 /* Project.swift in Sources */,
 				2710893523C8C8E300FD80F6 /* SceneDelegate.swift in Sources */,
+				2710898B23CA479C00FD80F6 /* Defaults.swift in Sources */,
 				2710897323C8D08A00FD80F6 /* WorkLog.swift in Sources */,
 				2710898723C9163200FD80F6 /* AddTextField.swift in Sources */,
 			);

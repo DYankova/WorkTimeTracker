@@ -39,7 +39,7 @@ class WorkLogsListViewController:  UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
         let visma1 = WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: "13", date: "21-2-19"))
         let visma2 = WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: "13", date: "21-2-19"))
         let visma3 = WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: "13", date: "21-2-19"))

@@ -8,11 +8,12 @@
 
 import UIKit
 
-struct AllProjectsViewModel {
+struct AllProjectsViewModel: Codable {
     var projects = [ProjectViewModel]()
     
     mutating func addToProjects(project: ProjectViewModel){
         self.projects.append(project)
+      
     }
     
     mutating func deleteFromProjects(sender: Int){

@@ -25,7 +25,7 @@ class AddTextView : UITextView {
         layer.borderWidth = 1
         layer.borderColor = UIColor.lightGray.cgColor
         backgroundColor = .clear
-        font = UIFont(name: "Robonto", size: 16)
+        font = .systemFont(ofSize: 16)
         layer.cornerRadius = 4
         textColor = .black
         isUserInteractionEnabled = true

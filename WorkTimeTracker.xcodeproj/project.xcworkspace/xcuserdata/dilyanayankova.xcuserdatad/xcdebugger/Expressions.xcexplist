@@ -3,10 +3,48 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "Defaults.getProjectsFromUserdefaults():Defaults.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Defaults.updatePairsToUserdefaults():Defaults.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "projectViewModels.projects">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProjectsListViewController.clicked():ProjectsListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "projectViewModels.projects">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProjectViewModel.calculateTotalHours(workLogs:):ProjectViewModel.swift">
+      </ContextState>
+      <ContextState
          contextName = "WorkLogsListViewController.viewDidLoad():WorkLogsListViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "projectViewModel?.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Defaults.getPairsFromUserdefaults():Defaults.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(NSKeyedUnarchiver.unarchiveObject(with: encodedData as Data) as? [ProjectViewModel] ?? [])">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProjectsListViewController.viewDidLoad():ProjectsListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "songs2">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

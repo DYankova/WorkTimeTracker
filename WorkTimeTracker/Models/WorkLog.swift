@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct WorkLog {
+struct WorkLog : Codable {
     let projectName : String
     let hours: String
     let date: String
@@ -18,4 +18,13 @@ struct WorkLog {
         self.hours = hours
         self.date = date
     }
+    
+    func encode(with aCoder: NSCoder) {
+          aCoder.encode(projectName, forKey: "projectName")
+          aCoder.encode(hours,    forKey: "hours")
+          aCoder.encode(date,    forKey: "date")
+         
+      }
+      
+      
 }

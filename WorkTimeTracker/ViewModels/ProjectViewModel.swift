@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct ProjectViewModel {
+struct ProjectViewModel: Codable {
     let project: Project
     var workLogs : [WorkLogViewModel]
    

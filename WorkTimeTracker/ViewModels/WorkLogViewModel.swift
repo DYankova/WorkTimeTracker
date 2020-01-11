@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct WorkLogViewModel {
+struct WorkLogViewModel : Codable {
     let workLog: WorkLog
     
      init(workLog: WorkLog) {

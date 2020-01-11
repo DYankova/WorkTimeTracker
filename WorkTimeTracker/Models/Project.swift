@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Project {
+struct Project : Codable {
     let name : String
     let totalHours: Int
     
