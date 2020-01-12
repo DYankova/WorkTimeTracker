@@ -25,6 +25,7 @@
 		2710898B23CA479C00FD80F6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898A23CA479C00FD80F6 /* Defaults.swift */; };
 		2710898D23CA767C00FD80F6 /* AddHoursTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898C23CA767C00FD80F6 /* AddHoursTextField.swift */; };
 		271A712B23CB685E00BB7298 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A712A23CB685E00BB7298 /* DateFormatter.swift */; };
+		271A712D23CB72E900BB7298 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A712C23CB72E900BB7298 /* Validator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		2710898A23CA479C00FD80F6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		2710898C23CA767C00FD80F6 /* AddHoursTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHoursTextField.swift; sourceTree = "<group>"; };
 		271A712A23CB685E00BB7298 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		271A712C23CB72E900BB7298 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			children = (
 				2710898A23CA479C00FD80F6 /* Defaults.swift */,
 				271A712A23CB685E00BB7298 /* DateFormatter.swift */,
+				271A712C23CB72E900BB7298 /* Validator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271A712D23CB72E900BB7298 /* Validator.swift in Sources */,
 				2710898523C915BF00FD80F6 /* AddButton.swift in Sources */,
 				2710898D23CA767C00FD80F6 /* AddHoursTextField.swift in Sources */,
 				2710898323C8FB9B00FD80F6 /* AllProjectsViewModel.swift in Sources */,

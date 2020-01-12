@@ -24,6 +24,8 @@ class ProjectsListViewController:  UIViewController {
 
     lazy var addBtn = AddButton()
 
+    lazy var validation = Validation()
+    
     override func viewDidLayoutSubviews() {
         print("")
     }
@@ -61,15 +63,21 @@ class ProjectsListViewController:  UIViewController {
     }
         
     @objc func addToProjects(){
+        if validation.validateName(projectTitleTextField.text ?? ""){
         projectViewModels.addToProjects(project: ProjectViewModel(project: Project(name: projectTitleTextField.text ?? "" , totalHours : 0), workLogs: []))
 
         collectionView.reloadData()
+        } else {
+            return
+        }
     }
     
     @objc func deleteRecord(sender: UIButton){
         projectViewModels.deleteFromProjects(sender: sender.tag)
         collectionView.reloadData()
     }
+    
+    
 }
 
 extension ProjectsListViewController:  UICollectionViewDataSource {

@@ -13,6 +13,8 @@ class WorkLogsListViewController:  UIViewController {
     var projectViewModel: ProjectViewModel!
     var projectViewModels = AllProjectsViewModel()
     
+    lazy var validation = Validation()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -91,9 +93,11 @@ class WorkLogsListViewController:  UIViewController {
     }
         
     @objc func addToWorkLogs(){
-        projectViewModel.addToWorkLogs(WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: projectViewModel.convertHours(workHoursTextField.text ?? ""), date: dateTextField.text ?? "")))
-         Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
-        collectionView.reloadData()
+        if validation.validateAddToLogs(dateTextField.text ?? "", workHoursTextField.text ?? ""){
+            projectViewModel.addToWorkLogs(WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: projectViewModel.convertHours(workHoursTextField.text ?? ""), date: dateTextField.text ?? "")))
+             Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
+            collectionView.reloadData()
+        } else{return}
     }
     
     @objc func deleteRecord(sender: UIButton){
