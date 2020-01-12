@@ -16,7 +16,7 @@ class ProjectViewModel: Codable {
         self.project = project
         self.workLogs = workLogs
     }
-      
+    
     var name: String {
         return project.name
     }
@@ -32,11 +32,9 @@ class ProjectViewModel: Codable {
   
     func addToWorkLogs(workLog: WorkLogViewModel){
         self.workLogs.append(workLog)
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(self), forKey: "workLogs")
     }
      
     func deleteFromProjects(sender: Int){
         self.workLogs.remove(at: sender)
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(self), forKey: "workLogs")
     }
 }

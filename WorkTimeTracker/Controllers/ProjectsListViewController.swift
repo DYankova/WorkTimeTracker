@@ -35,7 +35,7 @@ class ProjectsListViewController:  UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
-        collectionView.register(ProjectCell.self, forCellWithReuseIdentifier: "ProjectCell")
+        collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
         setupConstraints()
     }
      
@@ -76,7 +76,7 @@ extension ProjectsListViewController:  UICollectionViewDataSource {
     }
     
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let projectCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProjectCell", for: indexPath) as! ProjectCell
+        let projectCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
 
         projectCell.projectName.text = projectViewModels.projects[indexPath.item].name
         projectCell.totalHoursLabel.text = String(projectViewModels.projects[indexPath.item].totaHours)
@@ -96,6 +96,7 @@ extension ProjectsListViewController:  UICollectionViewDelegate, UICollectionVie
        let project = projectViewModels.projects[indexPath.item]
        let controller =  WorkLogsListViewController()
        controller.projectViewModel = project
+        controller.projectViewModels.projects  = projectViewModels.projects
        self.present(controller, animated: true, completion: nil)
        //        self.navigationController?.pushViewController(controller, animated: true)
        

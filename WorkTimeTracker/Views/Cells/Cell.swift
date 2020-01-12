@@ -1,5 +1,5 @@
 //
-//  ProjectCell.swift
+//  Cell.swift
 //  WorkTimeTracker
 //
 //  Created by Dilyana Yankova on 10.01.20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectCell: UICollectionViewCell {
+class Cell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

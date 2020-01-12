@@ -7,25 +7,27 @@
 //
 
 import Foundation
+import UIKit
 
 class Defaults {
     static var sharedInstance = Defaults()
-    static var userDefaults = UserDefaults.standard
 
     let projects = "projects"
     let workLogs = "worklogs"
-    var projectViewModels = AllProjectsViewModel()
 
-    func updatePairsToUserdefaults() {
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(projectViewModels.projects), forKey: "projects")
 
+    func encodeProjects(_ projects: [ProjectViewModel]) {
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(projects), forKey: "projects")
       }
 
-  func getPairsFromUserdefaults() {
+  func decodeProjects() -> [ProjectViewModel] {
+    var decodedProjects : [ProjectViewModel] = []
     if let data = UserDefaults.standard.value(forKey:"projects") as? Data {
-          let songs2 = try? PropertyListDecoder().decode(Array<ProjectViewModel>.self, from: data)
-          projectViewModels.projects = songs2 ?? []
-          }
+         decodedProjects = (try? PropertyListDecoder().decode(Array<ProjectViewModel>.self, from: data)) ?? []
+     
+    }
+    return decodedProjects
   }
+    
 }
 

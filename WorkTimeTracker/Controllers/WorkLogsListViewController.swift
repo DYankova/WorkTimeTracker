@@ -11,6 +11,7 @@ import UIKit
 class WorkLogsListViewController:  UIViewController {
     
     var projectViewModel: ProjectViewModel!
+    var projectViewModels = AllProjectsViewModel()
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -34,8 +35,7 @@ class WorkLogsListViewController:  UIViewController {
     lazy var datePicker = UIDatePicker()
     
     lazy var addBtn = AddButton()
-    
-    
+      
     lazy var formatter : DateFormatter = {
           let formatter = DateFormatter()
           formatter.dateFormat = "dd-MM-yyyy"
@@ -44,10 +44,9 @@ class WorkLogsListViewController:  UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        decode(projectViewModel: projectViewModel)
-        
+
         view.backgroundColor = .white
+        
         view.addSubview(collectionView)
         view.addSubview(addBtn)
         view.addSubview(dateTextField)
@@ -56,21 +55,14 @@ class WorkLogsListViewController:  UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
-        collectionView.register(ProjectCell.self, forCellWithReuseIdentifier: "ProjectCell")
+        collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
         setupConstraints()
         
         navigationItem.title = "Partner_lookup.page_title.text"
         setNavigationBar()
         showDatePicker()
     }
-    
-    func decode(projectViewModel : ProjectViewModel){
-            if let data = UserDefaults.standard.value(forKey:"workLogs") as? Data {
-              let decodedProjectViewModel = try? PropertyListDecoder().decode(ProjectViewModel.self, from: data)
-                projectViewModel.workLogs = decodedProjectViewModel?.workLogs ?? []
-            }
-    }
-    
+
     func setNavigationBar() {
         let screenSize: CGRect = UIScreen.main.bounds
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 15, width: screenSize.width, height: 70))
@@ -90,7 +82,7 @@ class WorkLogsListViewController:  UIViewController {
         addBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         addBtn.widthAnchor.constraint(equalToConstant: 60).isActive = true
         addBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        addBtn.addTarget(self, action: #selector(addToWorkLogs), for: UIControl.Event.touchUpInside)
+        addBtn.addTarget(self, action: #selector(addToWorkLogs), for: .touchUpInside)
         
         workHoursTextField.topAnchor.constraint(equalTo: addBtn.topAnchor).isActive = true
         workHoursTextField.rightAnchor.constraint(equalTo: addBtn.leftAnchor, constant: -10).isActive = true
@@ -110,11 +102,13 @@ class WorkLogsListViewController:  UIViewController {
         
     @objc func addToWorkLogs(){
         projectViewModel.addToWorkLogs(workLog: WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: workHoursTextField.text ?? "", date: dateTextField.text ?? "")))
+         Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
         collectionView.reloadData()
     }
     
     @objc func deleteRecord(sender: UIButton){
         projectViewModel.deleteFromProjects(sender: sender.tag)
+        Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
         collectionView.reloadData()
     }
 }
@@ -126,13 +120,13 @@ extension WorkLogsListViewController:  UICollectionViewDataSource {
     }
     
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let projectCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProjectCell", for: indexPath) as! ProjectCell
+        let wotkLogCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
 
-    projectCell.projectName.text = projectViewModel.workLogs[indexPath.item].date
-    projectCell.totalHoursLabel.text = String(projectViewModel.workLogs[indexPath.item].hours)
-    projectCell.deleteButton.tag = indexPath.item
-    projectCell.deleteButton.addTarget(self, action: #selector(deleteRecord(sender:)), for: UIControl.Event.touchUpInside)
-        return projectCell
+    wotkLogCell.projectName.text = projectViewModel.workLogs[indexPath.item].date
+    wotkLogCell.totalHoursLabel.text = String(projectViewModel.workLogs[indexPath.item].hours)
+    wotkLogCell.deleteButton.tag = indexPath.item
+    wotkLogCell.deleteButton.addTarget(self, action: #selector(deleteRecord(sender:)), for: .touchUpInside)
+        return wotkLogCell
     }
 }
 
@@ -155,11 +149,11 @@ extension WorkLogsListViewController {
     
      func showDatePicker(){
         datePicker.datePickerMode = UIDatePicker.Mode.date
-        datePicker.addTarget(self, action: #selector (dateChanged(datePicker:)), for: .valueChanged)
+        datePicker.addTarget(self, action: #selector (dateChanged(datePicker:)), for: UIControl.Event.allEvents)
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
-            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
 
         toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)

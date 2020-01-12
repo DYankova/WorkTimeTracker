@@ -12,19 +12,17 @@ class AllProjectsViewModel: Codable {
     var projects = [ProjectViewModel]()
     
     init() {
-     if let data = UserDefaults.standard.value(forKey:"projects") as? Data {
-        let decodedProjects = try? PropertyListDecoder().decode(Array<ProjectViewModel>.self, from: data)
-              projects = decodedProjects ?? []
-      }
+        self.projects = Defaults.sharedInstance.decodeProjects()
     }
     
     func addToProjects(project: ProjectViewModel){
         self.projects.append(project)
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(projects), forKey: "projects")
+        Defaults.sharedInstance.encodeProjects(self.projects)
+       
     }
     
     func deleteFromProjects(sender: Int){
         self.projects.remove(at: sender)
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(projects), forKey: "projects")
+        Defaults.sharedInstance.encodeProjects(self.projects)
     }
 }
