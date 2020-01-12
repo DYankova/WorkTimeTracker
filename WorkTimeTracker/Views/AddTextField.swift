@@ -8,19 +8,21 @@
 
 import UIKit
 
-class AddTextView : UITextView {
+class AddTextView : UITextField {
   
-    override init(frame: CGRect, textContainer: NSTextContainer?) {
-        super.init(frame: frame, textContainer: textContainer)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setup()
     }
-
+    
+    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     func setup(){
-        isEditable = true
+        placeholder = "Add new project"
+
         translatesAutoresizingMaskIntoConstraints = false
         layer.borderWidth = 1
         layer.borderColor = UIColor.lightGray.cgColor
@@ -31,5 +33,17 @@ class AddTextView : UITextView {
         isUserInteractionEnabled = true
         
     }
-    
+   
+  override open func textRect(forBounds bounds: CGRect) -> CGRect {
+    return bounds.inset(by: padding)
+    }
+
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+
 }

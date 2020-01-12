@@ -22,7 +22,6 @@ class WorkLogViewModel : Codable {
     
     //TODO
     var hours: Int {
-   
         return Int(workLog.hours) ?? 0
     }
     

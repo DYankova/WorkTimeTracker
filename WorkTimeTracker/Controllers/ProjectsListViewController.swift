@@ -44,7 +44,7 @@ class ProjectsListViewController:  UIViewController {
         addBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         addBtn.widthAnchor.constraint(equalToConstant: 70).isActive = true
         addBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        addBtn.addTarget(self, action: #selector(clicked), for: UIControl.Event.touchUpInside)
+        addBtn.addTarget(self, action: #selector(addToProjects), for: UIControl.Event.touchUpInside)
            
         projectTitleTextField.topAnchor.constraint(equalTo: addBtn.topAnchor).isActive = true
         projectTitleTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
@@ -57,10 +57,9 @@ class ProjectsListViewController:  UIViewController {
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
         
-    @objc func clicked(){
-        projectViewModels.addToProjects(project: ProjectViewModel(project: Project(name: projectTitleTextField.text, totalHours : 0), workLogs: []))
+    @objc func addToProjects(){
+        projectViewModels.addToProjects(project: ProjectViewModel(project: Project(name: projectTitleTextField.text ?? "" , totalHours : 0), workLogs: []))
 
-      
         collectionView.reloadData()
     }
     

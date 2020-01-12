@@ -16,15 +16,14 @@
 		2710896B23C8CF8A00FD80F6 /* ProjectsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710896A23C8CF8A00FD80F6 /* ProjectsListViewController.swift */; };
 		2710897123C8D07E00FD80F6 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897023C8D07E00FD80F6 /* Project.swift */; };
 		2710897323C8D08A00FD80F6 /* WorkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897223C8D08A00FD80F6 /* WorkLog.swift */; };
-		2710897523C8E25500FD80F6 /* AddWorkLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897423C8E25500FD80F6 /* AddWorkLogViewController.swift */; };
 		2710897723C8E37100FD80F6 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897623C8E37100FD80F6 /* ProjectCell.swift */; };
-		2710897D23C8E50600FD80F6 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897C23C8E50600FD80F6 /* DatePickerView.swift */; };
 		2710897F23C8E53B00FD80F6 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897E23C8E53B00FD80F6 /* ProjectViewModel.swift */; };
 		2710898123C8E54700FD80F6 /* WorkLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898023C8E54700FD80F6 /* WorkLogViewModel.swift */; };
 		2710898323C8FB9B00FD80F6 /* AllProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898223C8FB9B00FD80F6 /* AllProjectsViewModel.swift */; };
 		2710898523C915BF00FD80F6 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898423C915BF00FD80F6 /* AddButton.swift */; };
 		2710898723C9163200FD80F6 /* AddTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898623C9163200FD80F6 /* AddTextField.swift */; };
 		2710898B23CA479C00FD80F6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898A23CA479C00FD80F6 /* Defaults.swift */; };
+		2710898D23CA767C00FD80F6 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898C23CA767C00FD80F6 /* DatePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,15 +50,14 @@
 		2710896A23C8CF8A00FD80F6 /* ProjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsListViewController.swift; sourceTree = "<group>"; };
 		2710897023C8D07E00FD80F6 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		2710897223C8D08A00FD80F6 /* WorkLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLog.swift; sourceTree = "<group>"; };
-		2710897423C8E25500FD80F6 /* AddWorkLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkLogViewController.swift; sourceTree = "<group>"; };
 		2710897623C8E37100FD80F6 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
-		2710897C23C8E50600FD80F6 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		2710897E23C8E53B00FD80F6 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		2710898023C8E54700FD80F6 /* WorkLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogViewModel.swift; sourceTree = "<group>"; };
 		2710898223C8FB9B00FD80F6 /* AllProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProjectsViewModel.swift; sourceTree = "<group>"; };
 		2710898423C915BF00FD80F6 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		2710898623C9163200FD80F6 /* AddTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextField.swift; sourceTree = "<group>"; };
 		2710898A23CA479C00FD80F6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		2710898C23CA767C00FD80F6 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +127,6 @@
 			children = (
 				2710896A23C8CF8A00FD80F6 /* ProjectsListViewController.swift */,
 				2710896823C8CF4E00FD80F6 /* WorkLogsListViewController.swift */,
-				2710897423C8E25500FD80F6 /* AddWorkLogViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -148,7 +145,7 @@
 			children = (
 				2710898423C915BF00FD80F6 /* AddButton.swift */,
 				2710898623C9163200FD80F6 /* AddTextField.swift */,
-				2710897C23C8E50600FD80F6 /* DatePickerView.swift */,
+				2710898C23CA767C00FD80F6 /* DatePicker.swift */,
 				2710896F23C8D02500FD80F6 /* Cells */,
 			);
 			path = Views;
@@ -281,13 +278,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2710898523C915BF00FD80F6 /* AddButton.swift in Sources */,
+				2710898D23CA767C00FD80F6 /* DatePicker.swift in Sources */,
 				2710898323C8FB9B00FD80F6 /* AllProjectsViewModel.swift in Sources */,
 				2710893323C8C8E300FD80F6 /* AppDelegate.swift in Sources */,
 				2710898123C8E54700FD80F6 /* WorkLogViewModel.swift in Sources */,
-				2710897D23C8E50600FD80F6 /* DatePickerView.swift in Sources */,
 				2710897F23C8E53B00FD80F6 /* ProjectViewModel.swift in Sources */,
 				2710896923C8CF4E00FD80F6 /* WorkLogsListViewController.swift in Sources */,
-				2710897523C8E25500FD80F6 /* AddWorkLogViewController.swift in Sources */,
 				2710897723C8E37100FD80F6 /* ProjectCell.swift in Sources */,
 				2710896B23C8CF8A00FD80F6 /* ProjectsListViewController.swift in Sources */,
 				2710897123C8D07E00FD80F6 /* Project.swift in Sources */,

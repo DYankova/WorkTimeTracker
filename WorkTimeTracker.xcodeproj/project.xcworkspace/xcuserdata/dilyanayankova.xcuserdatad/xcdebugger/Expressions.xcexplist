@@ -9,6 +9,9 @@
          contextName = "ProjectViewModel.addToWorkLogs(workLog:):ProjectViewModel.swift">
          <PersistentStrings>
             <PersistentString
+               value = "self">
+            </PersistentString>
+            <PersistentString
                value = "workLogs">
             </PersistentString>
          </PersistentStrings>
@@ -35,6 +38,9 @@
       <ContextState
          contextName = "WorkLogsListViewController.viewDidLoad():WorkLogsListViewController.swift">
          <PersistentStrings>
+            <PersistentString
+               value = "projectViewModel">
+            </PersistentString>
             <PersistentString
                value = "projectViewModel?.name">
             </PersistentString>

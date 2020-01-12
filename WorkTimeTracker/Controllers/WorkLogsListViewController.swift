@@ -22,23 +22,31 @@ class WorkLogsListViewController:  UIViewController {
     
     lazy var dateTextField: AddTextView = {
         let textField = AddTextView()
-        textField.isEditable = false
         return textField
     }()
         
     lazy var workHoursTextField: AddTextView = {
         let textField = AddTextView()
-        textField.text = "0h"
+        textField.placeholder = "0 h"
         return textField
     }()
     
     lazy var datePicker = UIDatePicker()
     
     lazy var addBtn = AddButton()
-
+    
+    
+    lazy var formatter : DateFormatter = {
+          let formatter = DateFormatter()
+          formatter.dateFormat = "dd-MM-yyyy"
+          return formatter
+      }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        projectViewModel.decode()
+        
+        decode(projectViewModel: projectViewModel)
+        
         view.backgroundColor = .white
         view.addSubview(collectionView)
         view.addSubview(addBtn)
@@ -54,6 +62,13 @@ class WorkLogsListViewController:  UIViewController {
         navigationItem.title = "Partner_lookup.page_title.text"
         setNavigationBar()
         showDatePicker()
+    }
+    
+    func decode(projectViewModel : ProjectViewModel){
+            if let data = UserDefaults.standard.value(forKey:"workLogs") as? Data {
+              let decodedProjectViewModel = try? PropertyListDecoder().decode(ProjectViewModel.self, from: data)
+                projectViewModel.workLogs = decodedProjectViewModel?.workLogs ?? []
+            }
     }
     
     func setNavigationBar() {
@@ -94,7 +109,7 @@ class WorkLogsListViewController:  UIViewController {
     }
         
     @objc func addToWorkLogs(){
-        projectViewModel.addToWorkLogs(workLog: WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: workHoursTextField.text, date: dateTextField.text)))
+        projectViewModel.addToWorkLogs(workLog: WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: workHoursTextField.text ?? "", date: dateTextField.text ?? "")))
         collectionView.reloadData()
     }
     
@@ -134,13 +149,13 @@ extension WorkLogsListViewController:  UICollectionViewDelegate, UICollectionVie
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.
   }
-          
 }
 
 extension WorkLogsListViewController {
     
      func showDatePicker(){
         datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.addTarget(self, action: #selector (dateChanged(datePicker:)), for: .valueChanged)
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
@@ -153,11 +168,12 @@ extension WorkLogsListViewController {
         dateTextField.inputView = datePicker
      }
 
-  @objc func donedatePicker(){
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
+   @objc func dateChanged(datePicker: UIDatePicker){
         dateTextField.text = formatter.string(from: datePicker.date)
-       self.view.endEditing(true)
+    }
+  @objc func donedatePicker(){
+        dateTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
      }
 
  @objc func cancelDatePicker(){
