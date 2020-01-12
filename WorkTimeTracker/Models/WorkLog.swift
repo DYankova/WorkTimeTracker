@@ -10,21 +10,13 @@ import UIKit
 
 struct WorkLog : Codable {
     let projectName : String
-    let hours: String
+    var hours: Double
     let date: String
     
-    init(projectName: String, hours: String, date: String) {
+    init(projectName: String, hours: Double, date: String) {
         self.projectName = projectName
         self.hours = hours
         self.date = date
     }
-    
-    func encode(with aCoder: NSCoder) {
-          aCoder.encode(projectName, forKey: "projectName")
-          aCoder.encode(hours,    forKey: "hours")
-          aCoder.encode(date,    forKey: "date")
-         
-      }
-      
       
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTextView : UITextField {
+class AddTextField : UITextField {
   
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,8 +21,7 @@ class AddTextView : UITextField {
     }
     
     func setup(){
-        placeholder = "Add new project"
-
+        placeholder = "Add new"
         translatesAutoresizingMaskIntoConstraints = false
         layer.borderWidth = 1
         layer.borderColor = UIColor.lightGray.cgColor
@@ -31,6 +30,7 @@ class AddTextView : UITextField {
         layer.cornerRadius = 4
         textColor = .black
         isUserInteractionEnabled = true
+       
         
     }
    

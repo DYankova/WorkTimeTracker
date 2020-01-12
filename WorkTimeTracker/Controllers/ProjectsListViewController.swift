@@ -20,10 +20,13 @@ class ProjectsListViewController:  UIViewController {
         return cv
      }()
 
-    lazy var  projectTitleTextField = AddTextView()
+    lazy var  projectTitleTextField = AddTextField()
 
     lazy var addBtn = AddButton()
 
+    override func viewDidLayoutSubviews() {
+        print("")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
             

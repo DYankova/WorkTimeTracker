@@ -21,20 +21,24 @@ class ProjectViewModel: Codable {
         return project.name
     }
     
-    var totaHours: Int {
+    var totaHours: Double {
         return calculateTotalHours(workLogs: workLogs)
     }
     
-    
-    func calculateTotalHours(workLogs: [WorkLogViewModel]) -> Int {
+    func calculateTotalHours(workLogs: [WorkLogViewModel]) -> Double {
         return workLogs.reduce(0) { $0 + $1.hours }
     }
   
-    func addToWorkLogs(workLog: WorkLogViewModel){
+    func addToWorkLogs(_ workLog: WorkLogViewModel){
         self.workLogs.append(workLog)
     }
      
     func deleteFromProjects(sender: Int){
         self.workLogs.remove(at: sender)
     }
+    
+    func convertHours(_ hoursText : String) -> Double {
+        return Double(hoursText) ?? 0.0
+    }
+    
 }

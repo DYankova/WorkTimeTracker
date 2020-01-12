@@ -17,12 +17,12 @@ class WorkLogViewModel : Codable {
     
     //TODO - into real date
     var date: String {
-        return  String(workLog.date)
+        return workLog.date
     }
     
     //TODO
-    var hours: Int {
-        return Int(workLog.hours) ?? 0
+    var hours: Double {
+        return workLog.hours
     }
-    
+
 }

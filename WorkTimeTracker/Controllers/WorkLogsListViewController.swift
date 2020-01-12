@@ -21,27 +21,17 @@ class WorkLogsListViewController:  UIViewController {
         return cv
      }()
     
-    lazy var dateTextField: AddTextView = {
-        let textField = AddTextView()
+    lazy var dateTextField: AddTextField = {
+        let textField = AddTextField()
         return textField
     }()
         
-    lazy var workHoursTextField: AddTextView = {
-        let textField = AddTextView()
-        textField.placeholder = "0 h"
-        return textField
-    }()
+    lazy var workHoursTextField = AddHoursTextField()
     
     lazy var datePicker = UIDatePicker()
     
     lazy var addBtn = AddButton()
       
-    lazy var formatter : DateFormatter = {
-          let formatter = DateFormatter()
-          formatter.dateFormat = "dd-MM-yyyy"
-          return formatter
-      }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -101,7 +91,7 @@ class WorkLogsListViewController:  UIViewController {
     }
         
     @objc func addToWorkLogs(){
-        projectViewModel.addToWorkLogs(workLog: WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: workHoursTextField.text ?? "", date: dateTextField.text ?? "")))
+        projectViewModel.addToWorkLogs(WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: projectViewModel.convertHours(workHoursTextField.text ?? ""), date: dateTextField.text ?? "")))
          Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
         collectionView.reloadData()
     }
@@ -163,10 +153,10 @@ extension WorkLogsListViewController {
      }
 
    @objc func dateChanged(datePicker: UIDatePicker){
-        dateTextField.text = formatter.string(from: datePicker.date)
+    dateTextField.text = Formatter.formatter.string(from: datePicker.date)
     }
   @objc func donedatePicker(){
-        dateTextField.text = formatter.string(from: datePicker.date)
+    dateTextField.text = Formatter.formatter.string(from: datePicker.date)
         self.view.endEditing(true)
      }
 

@@ -3,18 +3,21 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Defaults.getProjectsFromUserdefaults():Defaults.swift">
-      </ContextState>
-      <ContextState
          contextName = "ProjectViewModel.addToWorkLogs(workLog:):ProjectViewModel.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self">
-            </PersistentString>
-            <PersistentString
                value = "workLogs">
             </PersistentString>
+            <PersistentString
+               value = "self">
+            </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Defaults.getProjectsFromUserdefaults():Defaults.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WorkLogsListViewController.decode(projectViewModel:):WorkLogsListViewController.swift">
       </ContextState>
       <ContextState
          contextName = "Defaults.updatePairsToUserdefaults():Defaults.swift">
@@ -34,6 +37,11 @@
       </ContextState>
       <ContextState
          contextName = "ProjectViewModel.calculateTotalHours(workLogs:):ProjectViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "workLogs.reduce(0) { $0 + $1.hours }">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "WorkLogsListViewController.viewDidLoad():WorkLogsListViewController.swift">

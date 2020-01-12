@@ -23,7 +23,8 @@
 		2710898523C915BF00FD80F6 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898423C915BF00FD80F6 /* AddButton.swift */; };
 		2710898723C9163200FD80F6 /* AddTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898623C9163200FD80F6 /* AddTextField.swift */; };
 		2710898B23CA479C00FD80F6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898A23CA479C00FD80F6 /* Defaults.swift */; };
-		2710898D23CA767C00FD80F6 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898C23CA767C00FD80F6 /* DatePicker.swift */; };
+		2710898D23CA767C00FD80F6 /* AddHoursTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898C23CA767C00FD80F6 /* AddHoursTextField.swift */; };
+		271A712B23CB685E00BB7298 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A712A23CB685E00BB7298 /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,8 @@
 		2710898423C915BF00FD80F6 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		2710898623C9163200FD80F6 /* AddTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextField.swift; sourceTree = "<group>"; };
 		2710898A23CA479C00FD80F6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
-		2710898C23CA767C00FD80F6 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		2710898C23CA767C00FD80F6 /* AddHoursTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHoursTextField.swift; sourceTree = "<group>"; };
+		271A712A23CB685E00BB7298 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +147,7 @@
 			children = (
 				2710898423C915BF00FD80F6 /* AddButton.swift */,
 				2710898623C9163200FD80F6 /* AddTextField.swift */,
-				2710898C23CA767C00FD80F6 /* DatePicker.swift */,
+				2710898C23CA767C00FD80F6 /* AddHoursTextField.swift */,
 				2710896F23C8D02500FD80F6 /* Cells */,
 			);
 			path = Views;
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				2710898A23CA479C00FD80F6 /* Defaults.swift */,
+				271A712A23CB685E00BB7298 /* DateFormatter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -278,7 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2710898523C915BF00FD80F6 /* AddButton.swift in Sources */,
-				2710898D23CA767C00FD80F6 /* DatePicker.swift in Sources */,
+				2710898D23CA767C00FD80F6 /* AddHoursTextField.swift in Sources */,
 				2710898323C8FB9B00FD80F6 /* AllProjectsViewModel.swift in Sources */,
 				2710893323C8C8E300FD80F6 /* AppDelegate.swift in Sources */,
 				2710898123C8E54700FD80F6 /* WorkLogViewModel.swift in Sources */,
@@ -286,6 +289,7 @@
 				2710896923C8CF4E00FD80F6 /* WorkLogsListViewController.swift in Sources */,
 				2710897723C8E37100FD80F6 /* Cell.swift in Sources */,
 				2710896B23C8CF8A00FD80F6 /* ProjectsListViewController.swift in Sources */,
+				271A712B23CB685E00BB7298 /* DateFormatter.swift in Sources */,
 				2710897123C8D07E00FD80F6 /* Project.swift in Sources */,
 				2710893523C8C8E300FD80F6 /* SceneDelegate.swift in Sources */,
 				2710898B23CA479C00FD80F6 /* Defaults.swift in Sources */,
