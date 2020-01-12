@@ -63,7 +63,6 @@ class Cell: UICollectionViewCell {
         
         totalHoursLabel.topAnchor.constraint(equalTo: projectName.topAnchor).isActive = true
         totalHoursLabel.rightAnchor.constraint(equalTo: deleteButton.leftAnchor, constant: -20).isActive = true
-
     }
 }
 

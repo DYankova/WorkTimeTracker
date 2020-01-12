@@ -23,12 +23,13 @@ class WorkLogsListViewController:  UIViewController {
         return cv
      }()
     
-    lazy var dateTextField: AddTextField = {
-        let textField = AddTextField()
+    lazy var dateTextField = AddTextField()
+       
+    lazy var workHoursTextField :  AddTextField = {
+        let textField =  AddTextField()
+        textField.placeholder = "0 h"
         return textField
     }()
-        
-    lazy var workHoursTextField = AddHoursTextField()
     
     lazy var datePicker = UIDatePicker()
     
@@ -39,10 +40,10 @@ class WorkLogsListViewController:  UIViewController {
 
         view.backgroundColor = .white
         
-        view.addSubview(collectionView)
-        view.addSubview(addButton)
         view.addSubview(dateTextField)
         view.addSubview(workHoursTextField)
+        view.addSubview(addButton)
+        view.addSubview(collectionView)
        
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -54,7 +55,7 @@ class WorkLogsListViewController:  UIViewController {
         setNavigationBar()
         showDatePicker()
     }
-
+    //TODO navigation
     func setNavigationBar() {
         let screenSize: CGRect = UIScreen.main.bounds
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 15, width: screenSize.width, height: 70))
@@ -94,10 +95,12 @@ class WorkLogsListViewController:  UIViewController {
         
     @objc func addToWorkLogs(){
         if validation.validateAddToLogs(dateTextField.text ?? "", workHoursTextField.text ?? ""){
-            projectViewModel.addToWorkLogs(WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: projectViewModel.convertHours(workHoursTextField.text ?? ""), date: dateTextField.text ?? "")))
+            projectViewModel.addToWorkLogs( WorkLog(projectName: projectViewModel.name, hours: projectViewModel.convertHours(workHoursTextField.text ?? ""), date: dateTextField.text ?? ""))
              Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
             collectionView.reloadData()
+            addButton.backgroundColor = .lightGray
         } else {
+            addButton.backgroundColor = .red
             return
         }
     }
@@ -115,19 +118,18 @@ extension WorkLogsListViewController:  UICollectionViewDataSource {
         return projectViewModel.workLogs.count
     }
     
-   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let wotkLogCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-
-    wotkLogCell.projectName.text = projectViewModel.workLogs[indexPath.item].date
-    wotkLogCell.totalHoursLabel.text = String(projectViewModel.workLogs[indexPath.item].hours)
-    wotkLogCell.deleteButton.tag = indexPath.item
-    wotkLogCell.deleteButton.addTarget(self, action: #selector(deleteRecord(sender:)), for: .touchUpInside)
+        wotkLogCell.projectName.text = projectViewModel.workLogs[indexPath.item].date
+        wotkLogCell.totalHoursLabel.text = String(projectViewModel.workLogs[indexPath.item].hours)
+        wotkLogCell.deleteButton.tag = indexPath.item
+        wotkLogCell.deleteButton.addTarget(self, action: #selector(deleteRecord(sender:)), for: .touchUpInside)
         return wotkLogCell
     }
 }
 
 extension WorkLogsListViewController:  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return CGSize(width: collectionView.frame.width, height: 40)
    }
            
@@ -144,8 +146,8 @@ extension WorkLogsListViewController:  UICollectionViewDelegate, UICollectionVie
 extension WorkLogsListViewController {
     
      func showDatePicker(){
-        datePicker.datePickerMode = UIDatePicker.Mode.date
-        datePicker.addTarget(self, action: #selector (dateChanged(datePicker:)), for: UIControl.Event.allEvents)
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector (dateChanged(datePicker:)), for: .allEvents)
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));

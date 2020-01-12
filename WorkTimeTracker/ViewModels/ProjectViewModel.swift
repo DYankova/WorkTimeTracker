@@ -11,9 +11,9 @@ import UIKit
 class ProjectViewModel: Codable, Equatable{
    
     let project: Project
-    var workLogs : [WorkLogViewModel]
+    var workLogs : [WorkLog]
      
-    init(_ project: Project, workLogs : [WorkLogViewModel]) {
+    init(_ project: Project, workLogs : [WorkLog]) {
         self.project = project
         self.workLogs = workLogs
     }
@@ -26,17 +26,16 @@ class ProjectViewModel: Codable, Equatable{
         return calculateTotalHours(workLogs: workLogs)
     }
      //Test
-    func calculateTotalHours(workLogs: [WorkLogViewModel]) -> Double {
+    func calculateTotalHours(workLogs: [WorkLog]) -> Double {
         return workLogs.reduce(0) { $0 + $1.hours }
     }
    //Test
-    func addToWorkLogs(_ workLog: WorkLogViewModel){
+    func addToWorkLogs(_ workLog: WorkLog){
         if let row = self.workLogs.firstIndex(where: {$0.date == workLog.date}) {
 //            workLog.hours +=  workLogs[row].hours
             workLogs[row] = workLog
             return
         }
-
         self.workLogs.append(workLog)
     }
       //Test

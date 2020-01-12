@@ -25,7 +25,7 @@ class ProjectsListViewController:  UIViewController {
     lazy var addButton = AddButton()
 
     lazy var validation = Validation()
-    
+    //TODO nacigation
     override func viewDidLayoutSubviews() {
         print("")
     }
@@ -33,10 +33,11 @@ class ProjectsListViewController:  UIViewController {
         super.viewDidLoad()
             
         view.backgroundColor = .white
-        view.addSubview(collectionView)
-        view.addSubview(addButton)
-        view.addSubview(projectTitleTextField)
         
+        view.addSubview(projectTitleTextField)
+        view.addSubview(addButton)
+        view.addSubview(collectionView)
+  
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
@@ -45,6 +46,7 @@ class ProjectsListViewController:  UIViewController {
     }
      
     func setupConstraints() {
+        
         addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
         addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
@@ -65,8 +67,8 @@ class ProjectsListViewController:  UIViewController {
     @objc func addToProjects(){
         if validation.validateName(projectTitleTextField.text ?? ""){
             projectViewModels.addToProjects(project: ProjectViewModel(Project(projectTitleTextField.text ?? ""), workLogs: []))
-            collectionView.reloadData()
             addButton.backgroundColor = .lightGray
+            collectionView.reloadData()
         } else {
             addButton.backgroundColor = .red
             return
@@ -87,7 +89,6 @@ extension ProjectsListViewController:  UICollectionViewDataSource {
     
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let projectCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-
         projectCell.projectName.text = projectViewModels.projects[indexPath.item].name
         projectCell.totalHoursLabel.text = String(projectViewModels.projects[indexPath.item].totaHours)
         projectCell.deleteButton.tag = indexPath.item
@@ -115,6 +116,7 @@ extension ProjectsListViewController:  UICollectionViewDelegate, UICollectionVie
     
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
+   
       // Dispose of any resources that can be recreated.
   }
           

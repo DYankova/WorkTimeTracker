@@ -9,7 +9,7 @@
 import Foundation
 
 class Validation {
-    
+    //Test
     func validateName(_ name: String) ->Bool {
         let nameRegex = "^\\w{3,18}$"
         let trimmedString = name.trimmingCharacters(in: .whitespaces)
@@ -17,7 +17,7 @@ class Validation {
         let isValidateName = validateName.evaluate(with: trimmedString)
         return isValidateName
    }
-    
+    //Test
     func validateHours(_ hoursString: String) -> Bool {
         let hoursRexef = "^(?:[1-9]\\d*)(?:\\.\\d*)?$"
         let trimmedString = hoursString.trimmingCharacters(in: .whitespaces)
@@ -25,12 +25,11 @@ class Validation {
         let isValidHour = validateHours.evaluate(with: trimmedString)
         return isValidHour
     }
-
+    //Test
     func validateDate(_ dateString: String) -> Bool {
         return Formatter.formatter.date(from: dateString) != nil
    }
-    
-    
+    //Test
     func validateAddToLogs(_ name: String, _ hoursString : String) -> Bool {
         let dayHours = 24.0
         let isLessThanDay = hoursString.toDouble() <= dayHours
