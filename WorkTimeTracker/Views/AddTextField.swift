@@ -15,11 +15,12 @@ class AddTextField : UITextField {
         setup()
     }
     
-    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
+    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+      
     func setup(){
         placeholder = "Add new"
         translatesAutoresizingMaskIntoConstraints = false
@@ -30,8 +31,10 @@ class AddTextField : UITextField {
         layer.cornerRadius = 4
         textColor = .black
         isUserInteractionEnabled = true
-       
-        
+    }
+    
+    func setupNotvalid(){
+        layer.borderColor = UIColor.lightGray.cgColor
     }
    
   override open func textRect(forBounds bounds: CGRect) -> CGRect {

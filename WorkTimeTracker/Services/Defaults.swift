@@ -7,26 +7,22 @@
 //
 
 import Foundation
-import UIKit
 
 class Defaults {
     static var sharedInstance = Defaults()
-
-    let projects = "projects"
-    let workLogs = "worklogs"
-
-
+    let projectsKey = "projects"
+   
     func encodeProjects(_ projects: [ProjectViewModel]) {
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(projects), forKey: "projects")
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(projects), forKey: projectsKey)
       }
 
-  func decodeProjects() -> [ProjectViewModel] {
-    var decodedProjects : [ProjectViewModel] = []
-    if let data = UserDefaults.standard.value(forKey:"projects") as? Data {
-         decodedProjects = (try? PropertyListDecoder().decode(Array<ProjectViewModel>.self, from: data)) ?? []
+    func decodeProjects() -> [ProjectViewModel] {
+        var decodedProjects : [ProjectViewModel] = []
+        if let data = UserDefaults.standard.value(forKey: projectsKey) as? Data {
+             decodedProjects = (try? PropertyListDecoder().decode(Array<ProjectViewModel>.self, from: data)) ?? []
      
-    }
-    return decodedProjects
+        }
+        return decodedProjects
   }
     
 }

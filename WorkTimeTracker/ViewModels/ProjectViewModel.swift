@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ProjectViewModel: Codable {
+class ProjectViewModel: Codable, Equatable{
+   
     let project: Project
     var workLogs : [WorkLogViewModel]
      
@@ -39,6 +40,10 @@ class ProjectViewModel: Codable {
     
     func convertHours(_ hoursText : String) -> Double {
         return Double(hoursText) ?? 0.0
+    }
+    
+    static func == (lhs: ProjectViewModel, rhs: ProjectViewModel) -> Bool {
+        return lhs.name == rhs.name
     }
     
 }

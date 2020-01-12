@@ -97,7 +97,9 @@ class WorkLogsListViewController:  UIViewController {
             projectViewModel.addToWorkLogs(WorkLogViewModel(workLog: WorkLog(projectName: projectViewModel.name, hours: projectViewModel.convertHours(workHoursTextField.text ?? ""), date: dateTextField.text ?? "")))
              Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
             collectionView.reloadData()
-        } else{return}
+        } else {
+            return
+        }
     }
     
     @objc func deleteRecord(sender: UIButton){
