@@ -32,7 +32,7 @@ class WorkLogsListViewController:  UIViewController {
     
     lazy var datePicker = UIDatePicker()
     
-    lazy var addBtn = AddButton()
+    lazy var addButton = AddButton()
       
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class WorkLogsListViewController:  UIViewController {
         view.backgroundColor = .white
         
         view.addSubview(collectionView)
-        view.addSubview(addBtn)
+        view.addSubview(addButton)
         view.addSubview(dateTextField)
         view.addSubview(workHoursTextField)
        
@@ -70,18 +70,18 @@ class WorkLogsListViewController:  UIViewController {
     }
     
     func setupConstraints() {
-        addBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
-        addBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        addBtn.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        addBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        addBtn.addTarget(self, action: #selector(addToWorkLogs), for: .touchUpInside)
+        addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
+        addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        addButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        addButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        addButton.addTarget(self, action: #selector(addToWorkLogs), for: .touchUpInside)
         
-        workHoursTextField.topAnchor.constraint(equalTo: addBtn.topAnchor).isActive = true
-        workHoursTextField.rightAnchor.constraint(equalTo: addBtn.leftAnchor, constant: -10).isActive = true
+        workHoursTextField.topAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
+        workHoursTextField.rightAnchor.constraint(equalTo: addButton.leftAnchor, constant: -10).isActive = true
         workHoursTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         workHoursTextField.widthAnchor.constraint(equalToConstant: 40).isActive = true
                   
-        dateTextField.topAnchor.constraint(equalTo: addBtn.topAnchor).isActive = true
+        dateTextField.topAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
         dateTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         dateTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         dateTextField.rightAnchor.constraint(equalTo: workHoursTextField.leftAnchor, constant: -10).isActive = true

@@ -20,6 +20,14 @@
          contextName = "WorkLogsListViewController.decode(projectViewModel:):WorkLogsListViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "closure #1 in ProjectViewModel.addToWorkLogs(_:):ProjectViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0.date == workLog.date">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "Defaults.updatePairsToUserdefaults():Defaults.swift">
          <PersistentStrings>
             <PersistentString

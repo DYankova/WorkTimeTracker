@@ -10,10 +10,8 @@ import UIKit
 
 struct Project : Codable {
     let name : String
-    let totalHours: Double
     
-    init(name: String, totalHours: Double) {
+    init(_ name: String) {
         self.name = name
-        self.totalHours = totalHours
     }
 }

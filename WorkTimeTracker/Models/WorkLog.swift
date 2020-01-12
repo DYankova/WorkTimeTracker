@@ -10,7 +10,7 @@ import UIKit
 
 struct WorkLog : Codable {
     let projectName : String
-    var hours: Double
+    let hours: Double
     let date: String
     
     init(projectName: String, hours: Double, date: String) {
