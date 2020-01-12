@@ -23,11 +23,11 @@ class ProjectViewModel: Codable, Equatable{
     }
     
     var totaHours: Double {
-        return calculateTotalHours(workLogs: workLogs)
+        return calculateTotalHours()
     }
      //Test
-    func calculateTotalHours(workLogs: [WorkLog]) -> Double {
-        return workLogs.reduce(0) { $0 + $1.hours }
+    func calculateTotalHours() -> Double {
+        return self.workLogs.reduce(0) { $0 + $1.hours }
     }
    //Test
     func addToWorkLogs(_ workLog: WorkLog){

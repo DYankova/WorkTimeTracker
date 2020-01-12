@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ProjectsListViewController:  UIViewController {
+class ProjectsListViewController: UIViewController {
     
     var projectViewModels = AllProjectsViewModel()
-    
+
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -26,9 +26,8 @@ class ProjectsListViewController:  UIViewController {
 
     lazy var validation = Validation()
     //TODO nacigation
-    override func viewDidLayoutSubviews() {
-        print("")
-    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
             
@@ -44,7 +43,11 @@ class ProjectsListViewController:  UIViewController {
         collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
         setupConstraints()
     }
-     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
+    }
+   
     func setupConstraints() {
         
         addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
@@ -108,8 +111,11 @@ extension ProjectsListViewController:  UICollectionViewDelegate, UICollectionVie
        let controller =  WorkLogsListViewController()
        controller.projectViewModel = project
         controller.projectViewModels.projects  = projectViewModels.projects
+        controller.modalPresentationStyle = .fullScreen
        self.present(controller, animated: true, completion: nil)
-       //        self.navigationController?.pushViewController(controller, animated: true)
+//     navigationController?.pushViewController(controller, animated: true)
+//
+    self.navigationController?.pushViewController(controller, animated: true)
        
          print("User tapped on item \(indexPath.row)")
    }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkLogsListViewController:  UIViewController {
+class WorkLogsListViewController:  UINavigationController {
     
     var projectViewModel: ProjectViewModel!
     var projectViewModels = AllProjectsViewModel()
@@ -34,10 +34,10 @@ class WorkLogsListViewController:  UIViewController {
     lazy var datePicker = UIDatePicker()
     
     lazy var addButton = AddButton()
-      
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.modalPresentationStyle = .fullScreen
         view.backgroundColor = .white
         
         view.addSubview(dateTextField)
@@ -132,11 +132,7 @@ extension WorkLogsListViewController:  UICollectionViewDelegate, UICollectionVie
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return CGSize(width: collectionView.frame.width, height: 40)
    }
-           
-   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         print("User tapped on item \(indexPath.row)")
-   }
-    
+ 
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.

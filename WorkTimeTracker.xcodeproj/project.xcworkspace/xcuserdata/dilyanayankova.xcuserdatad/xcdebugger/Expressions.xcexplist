@@ -3,21 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ProjectViewModel.addToWorkLogs(workLog:):ProjectViewModel.swift">
+         contextName = "ProjectsListViewController.clicked():ProjectsListViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "workLogs">
-            </PersistentString>
-            <PersistentString
-               value = "self">
+               value = "projectViewModels.projects">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Defaults.getProjectsFromUserdefaults():Defaults.swift">
-      </ContextState>
-      <ContextState
-         contextName = "WorkLogsListViewController.decode(projectViewModel:):WorkLogsListViewController.swift">
+         contextName = "ProjectViewModel.calculateTotalHours():ProjectViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = " self.workLogs.reduce(0) { $0 + $1.hours }">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "closure #1 in ProjectViewModel.addToWorkLogs(_:):ProjectViewModel.swift">
@@ -28,18 +27,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Defaults.updatePairsToUserdefaults():Defaults.swift">
+         contextName = "ProjectsListViewController.viewDidLoad():ProjectsListViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "projectViewModels.projects">
+               value = "songs2">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ProjectsListViewController.clicked():ProjectsListViewController.swift">
+         contextName = "ProjectViewModel.addToWorkLogs(workLog:):ProjectViewModel.swift">
          <PersistentStrings>
             <PersistentString
-               value = "projectViewModels.projects">
+               value = "workLogs">
+            </PersistentString>
+            <PersistentString
+               value = "self">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -63,18 +65,27 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Defaults.getPairsFromUserdefaults():Defaults.swift">
+         contextName = "Defaults.updatePairsToUserdefaults():Defaults.swift">
          <PersistentStrings>
             <PersistentString
-               value = "(NSKeyedUnarchiver.unarchiveObject(with: encodedData as Data) as? [ProjectViewModel] ?? [])">
+               value = "projectViewModels.projects">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ProjectsListViewController.viewDidLoad():ProjectsListViewController.swift">
+         contextName = "ProjectsListViewController.deleteRecord(sender:):ProjectsListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Defaults.getProjectsFromUserdefaults():Defaults.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WorkLogsListViewController.decode(projectViewModel:):WorkLogsListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Defaults.getPairsFromUserdefaults():Defaults.swift">
          <PersistentStrings>
             <PersistentString
-               value = "songs2">
+               value = "(NSKeyedUnarchiver.unarchiveObject(with: encodedData as Data) as? [ProjectViewModel] ?? [])">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
