@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkLogsListViewController:  UINavigationController {
+class WorkLogsListViewController:  UIViewController {
     
     var projectViewModel: ProjectViewModel!
     var projectViewModels = AllProjectsViewModel()
@@ -59,7 +59,7 @@ class WorkLogsListViewController:  UINavigationController {
 
     func setNavigationBar() {
         let navItem = UINavigationItem(title: projectViewModel.name)
-        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.close, target: nil, action: #selector(close))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .close, target: nil, action: #selector(close))
         navItem.leftBarButtonItem = doneItem
         projectTitleBar.setItems([navItem], animated: false)
         self.view.addSubview(projectTitleBar)
@@ -71,10 +71,10 @@ class WorkLogsListViewController:  UINavigationController {
     
     func setupConstraints() {
         projectTitleBar.translatesAutoresizingMaskIntoConstraints = false
-        projectTitleBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
+        projectTitleBar.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.cellHeight).isActive = true
         projectTitleBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         projectTitleBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        projectTitleBar.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        projectTitleBar.heightAnchor.constraint(equalToConstant: Constants.cellHeight).isActive = true
         
         addButton.topAnchor.constraint(equalTo: projectTitleBar.bottomAnchor, constant: Constants.padding).isActive = true
         addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -Constants.padding).isActive = true

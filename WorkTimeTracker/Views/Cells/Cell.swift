@@ -18,10 +18,6 @@ class Cell: UICollectionViewCell {
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    var navigationController: UINavigationController?
-    var viewController : UIViewController?
-    
     lazy var projectName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
