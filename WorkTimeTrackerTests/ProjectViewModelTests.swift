@@ -1,15 +1,15 @@
 //
-//  WorkTimeTrackerTests.swift
+//  ProjectViewModelTests.swift
 //  WorkTimeTrackerTests
 //
-//  Created by Dilyana Yankova on 10.01.20.
+//  Created by Dilyana Yankova on 13.01.20.
 //  Copyright © 2020 Dilyana Yankova. All rights reserved.
 //
 
 import XCTest
 @testable import WorkTimeTracker
 
-class WorkTimeTrackerTests: XCTestCase {
+class ProjectViewModelTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -11,7 +11,6 @@
 		2710893523C8C8E300FD80F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710893423C8C8E300FD80F6 /* SceneDelegate.swift */; };
 		2710893C23C8C8E300FD80F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2710893B23C8C8E300FD80F6 /* Assets.xcassets */; };
 		2710893F23C8C8E300FD80F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2710893D23C8C8E300FD80F6 /* LaunchScreen.storyboard */; };
-		2710894A23C8C8E300FD80F6 /* WorkTimeTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710894923C8C8E300FD80F6 /* WorkTimeTrackerTests.swift */; };
 		2710896923C8CF4E00FD80F6 /* WorkLogsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710896823C8CF4E00FD80F6 /* WorkLogsListViewController.swift */; };
 		2710896B23C8CF8A00FD80F6 /* ProjectsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710896A23C8CF8A00FD80F6 /* ProjectsListViewController.swift */; };
 		2710897123C8D07E00FD80F6 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710897023C8D07E00FD80F6 /* Project.swift */; };
@@ -23,9 +22,12 @@
 		2710898723C9163200FD80F6 /* AddTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898623C9163200FD80F6 /* AddTextField.swift */; };
 		2710898B23CA479C00FD80F6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898A23CA479C00FD80F6 /* Defaults.swift */; };
 		271A712B23CB685E00BB7298 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A712A23CB685E00BB7298 /* DateFormatter.swift */; };
-		271A712D23CB72E900BB7298 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A712C23CB72E900BB7298 /* Validator.swift */; };
+		271A712D23CB72E900BB7298 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A712C23CB72E900BB7298 /* Validation.swift */; };
 		27FE38C723CC8FD40074DB55 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE38C623CC8FD40074DB55 /* Extensions.swift */; };
 		27FE38C923CC90870074DB55 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE38C823CC90870074DB55 /* Constants.swift */; };
+		27FE38CD23CCA78B0074DB55 /* AllProjectsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE38CC23CCA78B0074DB55 /* AllProjectsViewModelTests.swift */; };
+		27FE38CF23CCA7A50074DB55 /* ProjectViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE38CE23CCA7A50074DB55 /* ProjectViewModelTests.swift */; };
+		27FE38D123CCA7CB0074DB55 /* ValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE38D023CCA7CB0074DB55 /* ValidationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,6 @@
 		2710893E23C8C8E300FD80F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2710894023C8C8E300FD80F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2710894523C8C8E300FD80F6 /* WorkTimeTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkTimeTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2710894923C8C8E300FD80F6 /* WorkTimeTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTimeTrackerTests.swift; sourceTree = "<group>"; };
 		2710894B23C8C8E300FD80F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2710896823C8CF4E00FD80F6 /* WorkLogsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogsListViewController.swift; sourceTree = "<group>"; };
 		2710896A23C8CF8A00FD80F6 /* ProjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsListViewController.swift; sourceTree = "<group>"; };
@@ -59,9 +60,12 @@
 		2710898623C9163200FD80F6 /* AddTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextField.swift; sourceTree = "<group>"; };
 		2710898A23CA479C00FD80F6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		271A712A23CB685E00BB7298 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
-		271A712C23CB72E900BB7298 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		271A712C23CB72E900BB7298 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		27FE38C623CC8FD40074DB55 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		27FE38C823CC90870074DB55 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		27FE38CC23CCA78B0074DB55 /* AllProjectsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProjectsViewModelTests.swift; sourceTree = "<group>"; };
+		27FE38CE23CCA7A50074DB55 /* ProjectViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModelTests.swift; sourceTree = "<group>"; };
+		27FE38D023CCA7CB0074DB55 /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +125,9 @@
 		2710894823C8C8E300FD80F6 /* WorkTimeTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				2710894923C8C8E300FD80F6 /* WorkTimeTrackerTests.swift */,
+				27FE38CC23CCA78B0074DB55 /* AllProjectsViewModelTests.swift */,
+				27FE38CE23CCA7A50074DB55 /* ProjectViewModelTests.swift */,
+				27FE38D023CCA7CB0074DB55 /* ValidationTests.swift */,
 				2710894B23C8C8E300FD80F6 /* Info.plist */,
 			);
 			path = WorkTimeTrackerTests;
@@ -177,7 +183,7 @@
 			children = (
 				2710898A23CA479C00FD80F6 /* Defaults.swift */,
 				271A712A23CB685E00BB7298 /* DateFormatter.swift */,
-				271A712C23CB72E900BB7298 /* Validator.swift */,
+				271A712C23CB72E900BB7298 /* Validation.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -291,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				271A712D23CB72E900BB7298 /* Validator.swift in Sources */,
+				271A712D23CB72E900BB7298 /* Validation.swift in Sources */,
 				2710898523C915BF00FD80F6 /* AddButton.swift in Sources */,
 				2710898323C8FB9B00FD80F6 /* AllProjectsViewModel.swift in Sources */,
 				2710893323C8C8E300FD80F6 /* AppDelegate.swift in Sources */,
@@ -314,7 +320,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2710894A23C8C8E300FD80F6 /* WorkTimeTrackerTests.swift in Sources */,
+				27FE38CF23CCA7A50074DB55 /* ProjectViewModelTests.swift in Sources */,
+				27FE38D123CCA7CB0074DB55 /* ValidationTests.swift in Sources */,
+				27FE38CD23CCA78B0074DB55 /* AllProjectsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
