@@ -18,12 +18,10 @@ class AllProjectsViewModel: Codable {
     func addToProjects(project: ProjectViewModel){
         if !self.projects.contains(project){
             self.projects.append(project)
-            Defaults.sharedInstance.encodeProjects(self.projects)
         }
     }
      //Test
     func deleteFromProjects(sender: Int){
         self.projects.remove(at: sender)
-        Defaults.sharedInstance.encodeProjects(self.projects)
     }
 }

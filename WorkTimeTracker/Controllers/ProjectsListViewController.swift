@@ -68,8 +68,9 @@ class ProjectsListViewController: UIViewController {
     @objc func addToProjects(){
         if validation.validateName(projectTitleTextField.text ?? ""){
             projectViewModels.addToProjects(project: ProjectViewModel(Project(projectTitleTextField.text ?? ""), workLogs: []))
-            addButton.backgroundColor = .lightGray
+            Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
             collectionView.reloadData()
+            addButton.backgroundColor = .lightGray
         } else {
             addButton.backgroundColor = .red
             return
@@ -78,6 +79,7 @@ class ProjectsListViewController: UIViewController {
     
     @objc func deleteRecord(sender: UIButton){
         projectViewModels.deleteFromProjects(sender: sender.tag)
+        Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
         collectionView.reloadData()
     }
 }

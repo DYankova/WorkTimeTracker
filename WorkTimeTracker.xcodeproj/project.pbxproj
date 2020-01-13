@@ -25,6 +25,7 @@
 		271A712B23CB685E00BB7298 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A712A23CB685E00BB7298 /* DateFormatter.swift */; };
 		271A712D23CB72E900BB7298 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A712C23CB72E900BB7298 /* Validator.swift */; };
 		27FE38C723CC8FD40074DB55 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE38C623CC8FD40074DB55 /* Extensions.swift */; };
+		27FE38C923CC90870074DB55 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE38C823CC90870074DB55 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		271A712A23CB685E00BB7298 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		271A712C23CB72E900BB7298 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		27FE38C623CC8FD40074DB55 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		27FE38C823CC90870074DB55 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				27FE38C623CC8FD40074DB55 /* Extensions.swift */,
+				27FE38C823CC90870074DB55 /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				2710897F23C8E53B00FD80F6 /* ProjectViewModel.swift in Sources */,
 				2710896923C8CF4E00FD80F6 /* WorkLogsListViewController.swift in Sources */,
 				2710897723C8E37100FD80F6 /* Cell.swift in Sources */,
+				27FE38C923CC90870074DB55 /* Constants.swift in Sources */,
 				2710896B23C8CF8A00FD80F6 /* ProjectsListViewController.swift in Sources */,
 				271A712B23CB685E00BB7298 /* DateFormatter.swift in Sources */,
 				2710897123C8D07E00FD80F6 /* Project.swift in Sources */,
