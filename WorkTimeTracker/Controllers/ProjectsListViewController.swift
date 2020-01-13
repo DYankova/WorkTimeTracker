@@ -25,9 +25,7 @@ class ProjectsListViewController: UIViewController {
     lazy var addButton = AddButton()
 
     lazy var validation = Validation()
-    //TODO nacigation
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
             
@@ -49,7 +47,7 @@ class ProjectsListViewController: UIViewController {
     }
    
     func setupConstraints() {
-        
+        //TOP CONSTRAINT - CONSTANTS
         addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
         addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
@@ -110,14 +108,9 @@ extension ProjectsListViewController:  UICollectionViewDelegate, UICollectionVie
        let project = projectViewModels.projects[indexPath.item]
        let controller =  WorkLogsListViewController()
        controller.projectViewModel = project
-        controller.projectViewModels.projects  = projectViewModels.projects
-        controller.modalPresentationStyle = .fullScreen
+       controller.projectViewModels.projects  = projectViewModels.projects
+       controller.modalPresentationStyle = .fullScreen
        self.present(controller, animated: true, completion: nil)
-//     navigationController?.pushViewController(controller, animated: true)
-//
-    self.navigationController?.pushViewController(controller, animated: true)
-       
-         print("User tapped on item \(indexPath.row)")
    }
     
   override func didReceiveMemoryWarning() {

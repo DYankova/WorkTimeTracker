@@ -13,7 +13,7 @@ struct WorkLog : Codable {
     let hours: Double
     let date: String
     
-    init(projectName: String, hours: Double, date: String) {
+    init(_ projectName: String, _ hours: Double, _ date: String) {
         self.projectName = projectName
         self.hours = hours
         self.date = date

@@ -20,7 +20,7 @@ class AddButton: UIButton {
     
     func setup(){
         backgroundColor = .lightGray
-        setTitle("Add New", for: .normal)
+        setTitle("Add", for: .normal)
         layer.cornerRadius = 4
         titleLabel?.font = .systemFont(ofSize: 14)
         translatesAutoresizingMaskIntoConstraints = false

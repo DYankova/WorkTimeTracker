@@ -11,7 +11,7 @@ import Foundation
 class Validation {
     //Test
     func validateName(_ name: String) ->Bool {
-        let nameRegex = "^\\w{3,18}$"
+        let nameRegex = "^\\w{2,18}$"
         let trimmedString = name.trimmingCharacters(in: .whitespaces)
         let validateName = NSPredicate(format: "SELF MATCHES %@", nameRegex)
         let isValidateName = validateName.evaluate(with: trimmedString)
@@ -34,11 +34,5 @@ class Validation {
         let dayHours = 24.0
         let isLessThanDay = hoursString.toDouble() <= dayHours
         return validateDate(name) && validateHours(hoursString) && isLessThanDay
-    }
-}
-
-extension String {
-    func toDouble() -> Double {
-        return NumberFormatter().number(from: self)?.doubleValue ?? 0.0
     }
 }

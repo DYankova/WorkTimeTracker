@@ -24,6 +24,7 @@
 		2710898B23CA479C00FD80F6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710898A23CA479C00FD80F6 /* Defaults.swift */; };
 		271A712B23CB685E00BB7298 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A712A23CB685E00BB7298 /* DateFormatter.swift */; };
 		271A712D23CB72E900BB7298 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A712C23CB72E900BB7298 /* Validator.swift */; };
+		27FE38C723CC8FD40074DB55 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE38C623CC8FD40074DB55 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		2710898A23CA479C00FD80F6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		271A712A23CB685E00BB7298 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		271A712C23CB72E900BB7298 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		27FE38C623CC8FD40074DB55 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				2710893123C8C8E300FD80F6 /* WorkTimeTracker */,
+				27FE38C523CC8F7D0074DB55 /* Common */,
 				2710894823C8C8E300FD80F6 /* WorkTimeTrackerTests */,
 				2710893023C8C8E300FD80F6 /* Products */,
 			);
@@ -175,6 +178,14 @@
 				271A712C23CB72E900BB7298 /* Validator.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		27FE38C523CC8F7D0074DB55 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				27FE38C623CC8FD40074DB55 /* Extensions.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 				2710896B23C8CF8A00FD80F6 /* ProjectsListViewController.swift in Sources */,
 				271A712B23CB685E00BB7298 /* DateFormatter.swift in Sources */,
 				2710897123C8D07E00FD80F6 /* Project.swift in Sources */,
+				27FE38C723CC8FD40074DB55 /* Extensions.swift in Sources */,
 				2710893523C8C8E300FD80F6 /* SceneDelegate.swift in Sources */,
 				2710898B23CA479C00FD80F6 /* Defaults.swift in Sources */,
 				2710897323C8D08A00FD80F6 /* WorkLog.swift in Sources */,

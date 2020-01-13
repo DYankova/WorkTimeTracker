@@ -44,7 +44,7 @@ class ProjectViewModel: Codable, Equatable{
     }
      //Test
     func convertHours(_ hoursText : String) -> Double {
-        return Double(hoursText) ?? 0.0
+        return hoursText.toDouble()
     }
     
     static func == (lhs: ProjectViewModel, rhs: ProjectViewModel) -> Bool {

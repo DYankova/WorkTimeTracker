@@ -31,6 +31,8 @@ class WorkLogsListViewController:  UINavigationController {
         return textField
     }()
     
+    lazy var projectTitleBar = UINavigationBar()
+    
     lazy var datePicker = UIDatePicker()
     
     lazy var addButton = AddButton()
@@ -49,21 +51,18 @@ class WorkLogsListViewController:  UINavigationController {
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
         collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
-        setupConstraints()
         
-        navigationItem.title = "Partner_lookup.page_title.text"
         setNavigationBar()
+        setupConstraints()
         showDatePicker()
     }
-    //TODO navigation
+
     func setNavigationBar() {
-        let screenSize: CGRect = UIScreen.main.bounds
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 15, width: screenSize.width, height: 70))
         let navItem = UINavigationItem(title: projectViewModel.name)
         let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.close, target: nil, action: #selector(close))
         navItem.leftBarButtonItem = doneItem
-        navBar.setItems([navItem], animated: false)
-        self.view.addSubview(navBar)
+        projectTitleBar.setItems([navItem], animated: false)
+        self.view.addSubview(projectTitleBar)
     }
     
     @objc func close() {
@@ -71,7 +70,13 @@ class WorkLogsListViewController:  UINavigationController {
     }
     
     func setupConstraints() {
-        addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
+        projectTitleBar.translatesAutoresizingMaskIntoConstraints = false
+        projectTitleBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
+        projectTitleBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        projectTitleBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        projectTitleBar.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        addButton.topAnchor.constraint(equalTo: projectTitleBar.bottomAnchor, constant: 20).isActive = true
         addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
         addButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
@@ -95,8 +100,8 @@ class WorkLogsListViewController:  UINavigationController {
         
     @objc func addToWorkLogs(){
         if validation.validateAddToLogs(dateTextField.text ?? "", workHoursTextField.text ?? ""){
-            projectViewModel.addToWorkLogs( WorkLog(projectName: projectViewModel.name, hours: projectViewModel.convertHours(workHoursTextField.text ?? ""), date: dateTextField.text ?? ""))
-             Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
+            projectViewModel.addToWorkLogs( WorkLog(projectViewModel.name, projectViewModel.convertHours(workHoursTextField.text ?? ""), dateTextField.text ?? ""))
+            Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
             collectionView.reloadData()
             addButton.backgroundColor = .lightGray
         } else {
@@ -157,12 +162,13 @@ extension WorkLogsListViewController {
      }
 
    @objc func dateChanged(datePicker: UIDatePicker){
-    dateTextField.text = Formatter.formatter.string(from: datePicker.date)
+        dateTextField.text = Formatter.formatter.string(from: datePicker.date)
     }
+    
   @objc func donedatePicker(){
-    dateTextField.text = Formatter.formatter.string(from: datePicker.date)
+        dateTextField.text = Formatter.formatter.string(from: datePicker.date)
         self.view.endEditing(true)
-     }
+ }
 
  @objc func cancelDatePicker(){
         self.view.endEditing(true)
