@@ -30,8 +30,15 @@ class WorkLogsListViewController:  UIViewController {
         textField.placeholder = "0 h"
         return textField
     }()
-    
-    lazy var projectTitleBar = UINavigationBar()
+
+    lazy var closeButton: UIButton = {
+        let btn = UIButton()
+        if let image = UIImage(named: "close") {
+            btn.setImage(image, for: .normal)
+        }
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
     
     lazy var datePicker = UIDatePicker()
     
@@ -46,37 +53,28 @@ class WorkLogsListViewController:  UIViewController {
         view.addSubview(workHoursTextField)
         view.addSubview(addButton)
         view.addSubview(collectionView)
+        view.addSubview(closeButton)
        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
         collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
         
-        setNavigationBar()
         setupConstraints()
         showDatePicker()
     }
-
-    func setNavigationBar() {
-        let navItem = UINavigationItem(title: projectViewModel.name)
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .close, target: nil, action: #selector(close))
-        navItem.leftBarButtonItem = doneItem
-        projectTitleBar.setItems([navItem], animated: false)
-        self.view.addSubview(projectTitleBar)
-    }
-    
     @objc func close() {
        self.dismiss(animated: true, completion: nil)
     }
     
     func setupConstraints() {
-        projectTitleBar.translatesAutoresizingMaskIntoConstraints = false
-        projectTitleBar.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.cellHeight).isActive = true
-        projectTitleBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        projectTitleBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        projectTitleBar.heightAnchor.constraint(equalToConstant: Constants.cellHeight).isActive = true
+        closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.cellHeight).isActive = true
+        closeButton.leftAnchor.constraint(equalTo: view.leftAnchor,constant: Constants.padding).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: Constants.padding).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: Constants.padding).isActive = true
+        closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         
-        addButton.topAnchor.constraint(equalTo: projectTitleBar.bottomAnchor, constant: Constants.padding).isActive = true
+        addButton.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: Constants.padding).isActive = true
         addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -Constants.padding).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
         addButton.heightAnchor.constraint(equalToConstant:  Constants.cellHeight).isActive = true

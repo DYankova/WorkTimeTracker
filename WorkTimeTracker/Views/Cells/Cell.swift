@@ -40,6 +40,10 @@ class Cell: UICollectionViewCell {
         btn.setTitleColor(.blue, for: .normal)
         if let image = UIImage(named: "delete") {
             btn.setImage(image, for: .normal)
+            let tintedImage = image.withRenderingMode(.alwaysTemplate)
+            btn.setImage(tintedImage, for: .normal)
+            btn.tintColor = Constants.darkGray
+            
         }
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn

@@ -9,9 +9,7 @@
 import UIKit
 
 struct Constants {
-    static let topAnchor : CGFloat = 50
-    
-    
+   
     static let cellHeight: CGFloat = 40
     
     static let darkGray = UIColor.darkGray

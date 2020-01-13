@@ -20,7 +20,7 @@ class ProjectsListViewController: UIViewController {
         return cv
      }()
 
-    lazy var  projectTitleTextField = AddTextField()
+    lazy var projectTitleTextField = AddTextField()
 
     lazy var addButton = AddButton()
 
@@ -48,7 +48,7 @@ class ProjectsListViewController: UIViewController {
    
     func setupConstraints() {
         //TOP CONSTRAINT - CONSTANTS
-        addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.topAnchor).isActive = true
+        addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
         addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -Constants.padding).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
         addButton.heightAnchor.constraint(equalToConstant: Constants.cellHeight).isActive = true
