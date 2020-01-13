@@ -29,7 +29,7 @@ class ProjectsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             
-        view.backgroundColor = .white
+        view.backgroundColor = Constants.backgroundColor
         
         view.addSubview(projectTitleTextField)
         view.addSubview(addButton)
@@ -48,18 +48,18 @@ class ProjectsListViewController: UIViewController {
    
     func setupConstraints() {
         //TOP CONSTRAINT - CONSTANTS
-        addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
-        addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.topAnchor).isActive = true
+        addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -Constants.padding).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        addButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        addButton.heightAnchor.constraint(equalToConstant: Constants.cellHeight).isActive = true
         addButton.addTarget(self, action: #selector(addToProjects), for: UIControl.Event.touchUpInside)
            
         projectTitleTextField.topAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
-        projectTitleTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        projectTitleTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        projectTitleTextField.rightAnchor.constraint(equalTo: addButton.leftAnchor, constant: -20).isActive = true
+        projectTitleTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding).isActive = true
+        projectTitleTextField.heightAnchor.constraint(equalToConstant:  Constants.cellHeight).isActive = true
+        projectTitleTextField.rightAnchor.constraint(equalTo: addButton.leftAnchor, constant: -Constants.padding).isActive = true
        
-        collectionView.topAnchor.constraint(equalTo: projectTitleTextField.bottomAnchor, constant: 20).isActive = true
+        collectionView.topAnchor.constraint(equalTo: projectTitleTextField.bottomAnchor, constant: Constants.padding).isActive = true
         collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -70,9 +70,9 @@ class ProjectsListViewController: UIViewController {
             projectViewModels.addToProjects(project: ProjectViewModel(Project(projectTitleTextField.text ?? ""), workLogs: []))
             Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
             collectionView.reloadData()
-            addButton.backgroundColor = .lightGray
+            addButton.backgroundColor = Constants.lightGray
         } else {
-            addButton.backgroundColor = .red
+            addButton.backgroundColor = Constants.alertColor
             return
         }
     }
@@ -102,7 +102,7 @@ extension ProjectsListViewController:  UICollectionViewDataSource {
 
 extension ProjectsListViewController:  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: collectionView.frame.width, height: 40)
+        return CGSize(width: collectionView.frame.width, height: Constants.cellHeight)
    }
            
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

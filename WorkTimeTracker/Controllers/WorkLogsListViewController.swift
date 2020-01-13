@@ -40,7 +40,7 @@ class WorkLogsListViewController:  UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.modalPresentationStyle = .fullScreen
-        view.backgroundColor = .white
+        view.backgroundColor = Constants.backgroundColor
         
         view.addSubview(dateTextField)
         view.addSubview(workHoursTextField)
@@ -74,25 +74,25 @@ class WorkLogsListViewController:  UINavigationController {
         projectTitleBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
         projectTitleBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         projectTitleBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        projectTitleBar.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        projectTitleBar.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
-        addButton.topAnchor.constraint(equalTo: projectTitleBar.bottomAnchor, constant: 20).isActive = true
-        addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        addButton.topAnchor.constraint(equalTo: projectTitleBar.bottomAnchor, constant: Constants.padding).isActive = true
+        addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -Constants.padding).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        addButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        addButton.heightAnchor.constraint(equalToConstant:  Constants.cellHeight).isActive = true
         addButton.addTarget(self, action: #selector(addToWorkLogs), for: .touchUpInside)
         
         workHoursTextField.topAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
         workHoursTextField.rightAnchor.constraint(equalTo: addButton.leftAnchor, constant: -10).isActive = true
-        workHoursTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        workHoursTextField.heightAnchor.constraint(equalToConstant:  Constants.cellHeight).isActive = true
         workHoursTextField.widthAnchor.constraint(equalToConstant: 40).isActive = true
                   
         dateTextField.topAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
-        dateTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        dateTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        dateTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding).isActive = true
+        dateTextField.heightAnchor.constraint(equalToConstant:  Constants.cellHeight).isActive = true
         dateTextField.rightAnchor.constraint(equalTo: workHoursTextField.leftAnchor, constant: -10).isActive = true
        
-        collectionView.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: 20).isActive = true
+        collectionView.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: Constants.padding).isActive = true
         collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -103,9 +103,9 @@ class WorkLogsListViewController:  UINavigationController {
             projectViewModel.addToWorkLogs( WorkLog(projectViewModel.name, projectViewModel.convertHours(workHoursTextField.text ?? ""), dateTextField.text ?? ""))
             Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
             collectionView.reloadData()
-            addButton.backgroundColor = .lightGray
+            addButton.backgroundColor = Constants.lightGray
         } else {
-            addButton.backgroundColor = .red
+            addButton.backgroundColor = Constants.alertColor
             return
         }
     }
@@ -135,7 +135,7 @@ extension WorkLogsListViewController:  UICollectionViewDataSource {
 
 extension WorkLogsListViewController:  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: collectionView.frame.width, height: 40)
+            return CGSize(width: collectionView.frame.width, height:  Constants.cellHeight)
    }
  
   override func didReceiveMemoryWarning() {
