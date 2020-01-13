@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectViewModel: Codable, Equatable{
+class ProjectViewModel: Codable, Equatable {
    
     let project: Project
     var workLogs : [WorkLog]
@@ -25,30 +25,30 @@ class ProjectViewModel: Codable, Equatable{
     var totaHours: Double {
         return calculateTotalHours()
     }
-     //Test
+
     func calculateTotalHours() -> Double {
         return self.workLogs.reduce(0) { $0 + $1.hours }
     }
-   //Test
-    func addToWorkLogs(_ workLog: WorkLog){
+
+    func addWorkLog(_ workLog: WorkLog){
         if let row = self.workLogs.firstIndex(where: {$0.date == workLog.date}) {
-//            workLog.hours +=  workLogs[row].hours
             workLogs[row] = workLog
-            return
+        } else {
+            self.workLogs.append(workLog)
         }
-        self.workLogs.append(workLog)
     }
-      //Test
-    func deleteFromProjects(sender: Int){
+
+    func deleteWorkLog(_ sender: Int){
         self.workLogs.remove(at: sender)
     }
      //Test
     func convertHours(_ hoursText : String) -> Double {
         return hoursText.toDouble()
     }
-    
+        
     static func == (lhs: ProjectViewModel, rhs: ProjectViewModel) -> Bool {
-        return lhs.name == rhs.name
-    }
+         return lhs.name == rhs.name
+     }
+     
     
 }

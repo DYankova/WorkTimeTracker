@@ -11,7 +11,7 @@ import UIKit
 class Validation {
     
     func validateName(_ name: String) ->Bool {
-        let nameRegex = "^\\w{2,18}$"
+        let nameRegex = "^[\\w\\s]{2,18}$"
         let trimmedString = name.trimmingCharacters(in: .whitespaces)
         let validateName = NSPredicate(format: "SELF MATCHES %@", nameRegex)
         let isValidateName = validateName.evaluate(with: trimmedString)

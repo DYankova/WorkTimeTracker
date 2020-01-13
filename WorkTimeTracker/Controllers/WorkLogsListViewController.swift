@@ -80,7 +80,7 @@ class WorkLogsListViewController:  UINavigationController {
         addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -Constants.padding).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
         addButton.heightAnchor.constraint(equalToConstant:  Constants.cellHeight).isActive = true
-        addButton.addTarget(self, action: #selector(addToWorkLogs), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(addWorkLog), for: .touchUpInside)
         
         workHoursTextField.topAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
         workHoursTextField.rightAnchor.constraint(equalTo: addButton.leftAnchor, constant: -10).isActive = true
@@ -98,9 +98,9 @@ class WorkLogsListViewController:  UINavigationController {
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
         
-    @objc func addToWorkLogs(){
+    @objc func addWorkLog(){
         if validation.validateAddToLogs(dateTextField.text ?? "", workHoursTextField.text ?? ""){
-            projectViewModel.addToWorkLogs( WorkLog(projectViewModel.name, projectViewModel.convertHours(workHoursTextField.text ?? ""), dateTextField.text ?? ""))
+            projectViewModel.addWorkLog( WorkLog( projectViewModel.convertHours(workHoursTextField.text ?? ""), dateTextField.text ?? ""))
             Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
             collectionView.reloadData()
             addButton.backgroundColor = Constants.lightGray
@@ -111,7 +111,7 @@ class WorkLogsListViewController:  UINavigationController {
     }
     
     @objc func deleteRecord(sender: UIButton){
-        projectViewModel.deleteFromProjects(sender: sender.tag)
+        projectViewModel.deleteWorkLog(sender.tag)
         Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
         collectionView.reloadData()
     }

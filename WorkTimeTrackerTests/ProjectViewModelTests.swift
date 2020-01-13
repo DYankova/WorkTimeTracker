@@ -11,24 +11,58 @@ import XCTest
 
 class ProjectViewModelTests: XCTestCase {
 
+    var projectViewModel: ProjectViewModel!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        projectViewModel = ProjectViewModel(Project("TestProject"), workLogs:
+            [WorkLog(1.5, "2016/07/27"),
+            WorkLog(15, "2017/07/27"),
+            WorkLog(3.5, "2018/07/27")])
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+       projectViewModel = nil
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCalculateTotalHoursWithEmptyWorkLogs(){
+        projectViewModel.workLogs = []
+        let result = projectViewModel.calculateTotalHours()
+         XCTAssertEqual(result, 0)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testCalculateTotalHoursWithWorkLogs(){
+        let result = projectViewModel.calculateTotalHours()
+        XCTAssertEqual(result, 20)
     }
-
+   
+    func testAddToWorkLogsWhenNotIn(){
+        let workLog = WorkLog(1.5, "2019/07/27")
+        projectViewModel.addWorkLog(workLog)
+        XCTAssertEqual(projectViewModel.workLogs[3].date, workLog.date)
+    }
+    
+    func testAddToWorkLogsWhenExists(){
+       let workLog = WorkLog(23, "2016/07/27")
+       projectViewModel.addWorkLog(workLog)
+       XCTAssertEqual(projectViewModel.workLogs[0].hours, workLog.hours)
+   }
+    
+    func testDeleteFromProjects(){
+        projectViewModel.deleteWorkLog(0)
+        let dates = projectViewModel.workLogs.map() {$0.date}
+        XCTAssertEqual(dates, ["2017/07/27", "2018/07/27"])
+   }
+    
+    func testConvertHoursWhenValidDouble(){
+        XCTAssertEqual(projectViewModel.convertHours("0"), 0)
+        XCTAssertEqual(projectViewModel.convertHours("1"), 1)
+        XCTAssertEqual(projectViewModel.convertHours("23.445"),23.445)
+    }
+    
+    func testConvertHoursWhenInvalidDouble(){
+        XCTAssertEqual(projectViewModel.convertHours("0eeefrr"), 0)
+        XCTAssertEqual(projectViewModel.convertHours(""), 0)
+        XCTAssertEqual(projectViewModel.convertHours("1,3"), 0)
+    }
+    
 }

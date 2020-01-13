@@ -21,7 +21,7 @@ class ValidationTests: XCTestCase {
        validation = nil
     }
 
-    func testValidationNameWhenValid(name: String){
+    func testValidatеNameWhenValid(){
         let name = "ValidNameOfProject"
         let result = validation.validateName(name)
         XCTAssertTrue(result)
@@ -45,9 +45,15 @@ class ValidationTests: XCTestCase {
          XCTAssertFalse(result)
     }
     
+    func testValidateNameWhiteSpace(){
+            let name = " Name with space"
+            let result = validation.validateName(name)
+            XCTAssertTrue(result)
+       }
+    
     func testValidateHoursInvalid(){
-        let hours = "text"
-        let result = validation.validateHours(hours)
+        let hoursString = "text"
+        let result = validation.validateHours(hoursString)
         XCTAssertFalse(result)
     }
     
@@ -69,18 +75,18 @@ class ValidationTests: XCTestCase {
         XCTAssertTrue(result)
     }
     
-    func testValidateDateNotValid(){
-        let date = "2019 -07-ss27"
-        let result = validation.validateDate(date)
-        XCTAssertFalse(result)
-    }
-    
     func testValidateDateDifferentFormat(){
         let date = "2019-07-27"
         let result = validation.validateDate(date)
         XCTAssertTrue(result)
     }
     
+    func testValidateDateNotValid(){
+        let date = "2019 -07-ss27"
+        let result = validation.validateDate(date)
+        XCTAssertFalse(result)
+    }
+  
     func testValidateHoursInADayValid(){
         let hoursString = "24"
         let result = validation.validateHoursInADay(hoursString)

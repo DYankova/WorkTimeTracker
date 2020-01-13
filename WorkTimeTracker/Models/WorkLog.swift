@@ -9,12 +9,10 @@
 import UIKit
 
 struct WorkLog : Codable {
-    let projectName : String
     let hours: Double
     let date: String
     
-    init(_ projectName: String, _ hours: Double, _ date: String) {
-        self.projectName = projectName
+    init( _ hours: Double, _ date: String) {
         self.hours = hours
         self.date = date
     }

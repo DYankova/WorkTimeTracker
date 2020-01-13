@@ -52,7 +52,7 @@ class ProjectsListViewController: UIViewController {
         addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -Constants.padding).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
         addButton.heightAnchor.constraint(equalToConstant: Constants.cellHeight).isActive = true
-        addButton.addTarget(self, action: #selector(addToProjects), for: UIControl.Event.touchUpInside)
+        addButton.addTarget(self, action: #selector(addProject), for: UIControl.Event.touchUpInside)
            
         projectTitleTextField.topAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
         projectTitleTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding).isActive = true
@@ -65,9 +65,9 @@ class ProjectsListViewController: UIViewController {
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
         
-    @objc func addToProjects(){
+    @objc func addProject(){
         if validation.validateName(projectTitleTextField.text ?? ""){
-            projectViewModels.addToProjects(project: ProjectViewModel(Project(projectTitleTextField.text ?? ""), workLogs: []))
+            projectViewModels.addProject(ProjectViewModel(Project(projectTitleTextField.text ?? ""), workLogs: []))
             Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
             collectionView.reloadData()
             addButton.backgroundColor = Constants.lightGray
@@ -78,7 +78,7 @@ class ProjectsListViewController: UIViewController {
     }
     
     @objc func deleteRecord(sender: UIButton){
-        projectViewModels.deleteFromProjects(sender: sender.tag)
+        projectViewModels.deleteProject(sender.tag)
         Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
         collectionView.reloadData()
     }
