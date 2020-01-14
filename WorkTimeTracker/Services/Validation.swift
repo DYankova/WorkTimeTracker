@@ -16,7 +16,7 @@ class Validation {
         let validateName = NSPredicate(format: "SELF MATCHES %@", nameRegex)
         let isValidateName = validateName.evaluate(with: trimmedString)
         return isValidateName
-   }
+    }
     
     func validateHours(_ hoursString: String) -> Bool {
         let hoursRexef = "^(?:[1-9]\\d*)(?:\\.\\d*)?$"

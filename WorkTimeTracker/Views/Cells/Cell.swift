@@ -19,7 +19,7 @@ class Cell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var projectName: UILabel = {
+    lazy var textLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Robonto", size: 20)
         label.textColor = Constants.darkGray
@@ -27,10 +27,10 @@ class Cell: UICollectionViewCell {
         return label
     }()
 
-    lazy var totalHoursLabel: UILabel = {
+    lazy var hoursLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Robonto", size: 20)
-        label.textColor = Constants.lightGray
+        label.textColor = Constants.darkGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -42,26 +42,26 @@ class Cell: UICollectionViewCell {
         if let image = UIImage(named: "delete") {
             let tintedImage = image.withRenderingMode(.alwaysTemplate)
             btn.setImage(tintedImage, for: .normal)
-            btn.tintColor = Constants.darkGray
+            btn.tintColor = Constants.lightGray
         }
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
 
     func setupViews() {
-        addSubview(projectName)
-        addSubview(totalHoursLabel)
+        addSubview(textLabel)
+        addSubview(hoursLabel)
         addSubview(deleteButton)
  
-        projectName.topAnchor.constraint(equalTo: topAnchor, constant: Constants.padding).isActive = true
-        projectName.widthAnchor.constraint(equalToConstant: 150 ).isActive = true
-        projectName.leftAnchor.constraint(equalTo: self.leftAnchor, constant: Constants.padding).isActive = true
+        textLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.padding).isActive = true
+        textLabel.widthAnchor.constraint(equalToConstant: 150 ).isActive = true
+        textLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: Constants.padding).isActive = true
         
-        deleteButton.topAnchor.constraint(equalTo: projectName.topAnchor).isActive = true
+        deleteButton.topAnchor.constraint(equalTo: textLabel.topAnchor).isActive = true
         deleteButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -Constants.padding).isActive = true
         
-        totalHoursLabel.topAnchor.constraint(equalTo: projectName.topAnchor).isActive = true
-        totalHoursLabel.rightAnchor.constraint(equalTo: deleteButton.leftAnchor, constant: -Constants.padding).isActive = true
+        hoursLabel.topAnchor.constraint(equalTo: textLabel.topAnchor).isActive = true
+        hoursLabel.rightAnchor.constraint(equalTo: deleteButton.leftAnchor, constant: -Constants.padding).isActive = true
     }
 }
 

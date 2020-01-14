@@ -31,9 +31,9 @@ class AddTextField : UITextField {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-      override open func textRect(forBounds bounds: CGRect) -> CGRect {
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
-     }
+    }
 
     override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)

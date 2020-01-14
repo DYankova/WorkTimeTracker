@@ -30,7 +30,7 @@ class ProjectViewModel: Codable, Equatable {
         return self.workLogs.reduce(0) { $0 + $1.hours }
     }
 
-    func addWorkLog(_ workLog: WorkLog){
+    func addWorkLog(_ workLog: WorkLog) {
         if let row = self.workLogs.firstIndex(where: {$0.date == workLog.date}) {
             workLogs[row] = workLog
         } else {

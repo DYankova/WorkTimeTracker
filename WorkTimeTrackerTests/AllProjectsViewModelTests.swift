@@ -13,10 +13,9 @@ class AllProjectsViewModelTests: XCTestCase {
 
     var аllProjectsViewModel: AllProjectsViewModel!
             
-    var testProjects = [ProjectViewModel(Project("First"), workLogs: []),                                                                             ProjectViewModel(Project("Second"), workLogs: []),
+    var testProjects = [ProjectViewModel(Project("First"), workLogs: []),                                                                                                ProjectViewModel(Project("Second"), workLogs: []),
                         ProjectViewModel(Project("Third"), workLogs: [])]
 
-            
     override func setUp() {
         аllProjectsViewModel =  AllProjectsViewModel()
         аllProjectsViewModel.projects = testProjects
@@ -26,22 +25,22 @@ class AllProjectsViewModelTests: XCTestCase {
         аllProjectsViewModel = nil
     }
     
-     func testAddProjectWhenNotIn(){
+    func testAddProjectWhenNotIn(){
         let projectViewModel = ProjectViewModel(Project("New"), workLogs: [])
         аllProjectsViewModel.addProject(projectViewModel)
         XCTAssertTrue(аllProjectsViewModel.projects.contains(projectViewModel))
-      }
+    }
       
-      func testAddProjectWhenExists(){
+    func testAddProjectWhenExists(){
          let projectViewModel = ProjectViewModel(Project("First"), workLogs: [])
          аllProjectsViewModel.addProject(projectViewModel)
          XCTAssertEqual(аllProjectsViewModel.projects.count, 3)
-     }
-    
-      func testDeleteFromProjects(){
+    }
+
+    func testDeleteFromProjects(){
         аllProjectsViewModel.deleteProject(0)
         let projectsNames = аllProjectsViewModel.projects.map() {$0.name}
         XCTAssertEqual(projectsNames, ["Second", "Third"])
-     }
+    }
       
 }

@@ -31,13 +31,13 @@ class ValidationTests: XCTestCase {
         let name = "w"
         let result = validation.validateName(name)
         XCTAssertFalse(result)
-   }
+    }
     
     func testValidateNameTooSLong(){
         let name = "NameConsistingTooManyCharacters"
         let result = validation.validateName(name)
         XCTAssertFalse(result)
-   }
+    }
     
     func testValidateNameEmpty(){
          let name = ""
@@ -49,7 +49,7 @@ class ValidationTests: XCTestCase {
         let name = " Name with space"
         let result = validation.validateName(name)
         XCTAssertTrue(result)
-       }
+    }
     
     func testValidateHoursInvalid(){
         let hoursString = "text"

@@ -123,8 +123,8 @@ extension WorkLogsListViewController:  UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let wotkLogCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-        wotkLogCell.projectName.text = projectViewModel.workLogs[indexPath.item].date
-        wotkLogCell.totalHoursLabel.text = String(projectViewModel.workLogs[indexPath.item].hours)
+        wotkLogCell.textLabel.text = projectViewModel.workLogs[indexPath.item].date
+        wotkLogCell.hoursLabel.text = String(projectViewModel.workLogs[indexPath.item].hours)
         wotkLogCell.deleteButton.tag = indexPath.item
         wotkLogCell.deleteButton.addTarget(self, action: #selector(deleteRecord(sender:)), for: .touchUpInside)
         return wotkLogCell
@@ -156,17 +156,17 @@ extension WorkLogsListViewController {
         dateTextField.inputView = datePicker
      }
 
-   @objc func dateChanged(datePicker: UIDatePicker){
+    @objc func dateChanged(datePicker: UIDatePicker){
         dateTextField.text = Formatter.formatter.string(from: datePicker.date)
     }
     
-  @objc func doneDatePicker(){
+    @objc func doneDatePicker(){
         dateTextField.text = Formatter.formatter.string(from: datePicker.date)
         self.view.endEditing(true)
- }
+    }
 
- @objc func cancelDatePicker(){
+    @objc func cancelDatePicker(){
         self.view.endEditing(true)
-  }
+    }
     
 }

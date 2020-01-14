@@ -90,8 +90,8 @@ extension ProjectsListViewController:  UICollectionViewDataSource {
     
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let projectCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-        projectCell.projectName.text = projectViewModels.projects[indexPath.item].name
-        projectCell.totalHoursLabel.text = String(projectViewModels.projects[indexPath.item].totaHours)
+        projectCell.textLabel.text = projectViewModels.projects[indexPath.item].name
+        projectCell.hoursLabel.text = String(projectViewModels.projects[indexPath.item].totaHours)
         projectCell.deleteButton.tag = indexPath.item
         projectCell.deleteButton.addTarget(self, action: #selector(deleteRecord(sender:)), for: .touchUpInside)
         return projectCell

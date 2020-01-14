@@ -19,7 +19,7 @@ class AddButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(){
+    func setup() {
         backgroundColor = Constants.lightGray
         setTitle("Add", for: .normal)
         layer.cornerRadius = 4
