@@ -112,5 +112,5 @@ extension ProjectsListViewController:  UICollectionViewDelegate, UICollectionVie
        workLogsListViewController.modalPresentationStyle = .fullScreen
        self.present(workLogsListViewController, animated: true, completion: nil)
    }
-      
+    
 }

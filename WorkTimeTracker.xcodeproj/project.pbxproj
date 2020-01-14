@@ -90,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				2710893123C8C8E300FD80F6 /* WorkTimeTracker */,
-				27FE38C523CC8F7D0074DB55 /* Common */,
 				2710894823C8C8E300FD80F6 /* WorkTimeTrackerTests */,
 				2710893023C8C8E300FD80F6 /* Products */,
 			);
@@ -118,6 +117,7 @@
 				2710893B23C8C8E300FD80F6 /* Assets.xcassets */,
 				2710893D23C8C8E300FD80F6 /* LaunchScreen.storyboard */,
 				2710894023C8C8E300FD80F6 /* Info.plist */,
+				27FE38C523CC8F7D0074DB55 /* Common */,
 			);
 			path = WorkTimeTracker;
 			sourceTree = "<group>";
