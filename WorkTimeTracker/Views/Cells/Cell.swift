@@ -18,19 +18,20 @@ class Cell: UICollectionViewCell {
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     lazy var projectName: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "Robonto", size: 20)
         label.textColor = Constants.darkGray
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     lazy var totalHoursLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "Robonto", size: 20)
         label.textColor = Constants.lightGray
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
   
@@ -39,11 +40,9 @@ class Cell: UICollectionViewCell {
         btn.tintColor = Constants.darkGray
         btn.setTitleColor(.blue, for: .normal)
         if let image = UIImage(named: "delete") {
-            btn.setImage(image, for: .normal)
             let tintedImage = image.withRenderingMode(.alwaysTemplate)
             btn.setImage(tintedImage, for: .normal)
             btn.tintColor = Constants.darkGray
-            
         }
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
@@ -55,7 +54,7 @@ class Cell: UICollectionViewCell {
         addSubview(deleteButton)
  
         projectName.topAnchor.constraint(equalTo: topAnchor, constant: Constants.padding).isActive = true
-        projectName.widthAnchor.constraint(equalToConstant: 250 ).isActive = true
+        projectName.widthAnchor.constraint(equalToConstant: 150 ).isActive = true
         projectName.leftAnchor.constraint(equalTo: self.leftAnchor, constant: Constants.padding).isActive = true
         
         deleteButton.topAnchor.constraint(equalTo: projectName.topAnchor).isActive = true

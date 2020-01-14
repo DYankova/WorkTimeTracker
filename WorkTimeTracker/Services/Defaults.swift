@@ -9,6 +9,7 @@
 import Foundation
 
 class Defaults {
+    
     static var sharedInstance = Defaults()
     let projectsKey = "projects"
    
@@ -20,10 +21,9 @@ class Defaults {
         var decodedProjects : [ProjectViewModel] = []
         if let data = UserDefaults.standard.value(forKey: projectsKey) as? Data {
              decodedProjects = (try? PropertyListDecoder().decode(Array<ProjectViewModel>.self, from: data)) ?? []
-     
         }
         return decodedProjects
-  }
+    }
     
 }
 

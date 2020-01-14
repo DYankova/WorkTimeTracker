@@ -28,7 +28,7 @@ class Validation {
     
     func validateDate(_ dateString: String) -> Bool {
         return Formatter.formatter.date(from: dateString) != nil
-   }
+    }
     
     func validateHoursInADay(_ hoursString : String) -> Bool {
         let dayHours = 24.0
@@ -38,4 +38,5 @@ class Validation {
     func validateAddToLogs(_ name: String, _ hoursString : String) -> Bool {
         return validateDate(name) && validateHours(hoursString) && validateHoursInADay(hoursString)
     }
+    
 }

@@ -12,8 +12,8 @@ import XCTest
 class AllProjectsViewModelTests: XCTestCase {
 
     var аllProjectsViewModel: AllProjectsViewModel!
-    
-    var testProjects = [ProjectViewModel(Project("First"), workLogs: []),                                          ProjectViewModel(Project("Second"), workLogs: []),
+            
+    var testProjects = [ProjectViewModel(Project("First"), workLogs: []),                                                                             ProjectViewModel(Project("Second"), workLogs: []),
                         ProjectViewModel(Project("Third"), workLogs: [])]
 
             
@@ -27,21 +27,21 @@ class AllProjectsViewModelTests: XCTestCase {
     }
     
      func testAddProjectWhenNotIn(){
-            let projectViewModel = ProjectViewModel(Project("New"), workLogs: [])
-            аllProjectsViewModel.addProject(projectViewModel)
-            XCTAssertTrue(аllProjectsViewModel.projects.contains(projectViewModel))
+        let projectViewModel = ProjectViewModel(Project("New"), workLogs: [])
+        аllProjectsViewModel.addProject(projectViewModel)
+        XCTAssertTrue(аllProjectsViewModel.projects.contains(projectViewModel))
       }
       
       func testAddProjectWhenExists(){
-             let projectViewModel = ProjectViewModel(Project("First"), workLogs: [])
-             аllProjectsViewModel.addProject(projectViewModel)
-             XCTAssertEqual(аllProjectsViewModel.projects.count, 3)
+         let projectViewModel = ProjectViewModel(Project("First"), workLogs: [])
+         аllProjectsViewModel.addProject(projectViewModel)
+         XCTAssertEqual(аllProjectsViewModel.projects.count, 3)
      }
     
       func testDeleteFromProjects(){
-              аllProjectsViewModel.deleteProject(0)
+        аllProjectsViewModel.deleteProject(0)
         let projectsNames = аllProjectsViewModel.projects.map() {$0.name}
-              XCTAssertEqual(projectsNames, ["Second", "Third"])
+        XCTAssertEqual(projectsNames, ["Second", "Third"])
      }
       
 }

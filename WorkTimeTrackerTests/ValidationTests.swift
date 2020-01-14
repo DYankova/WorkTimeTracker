@@ -46,9 +46,9 @@ class ValidationTests: XCTestCase {
     }
     
     func testValidateNameWhiteSpace(){
-            let name = " Name with space"
-            let result = validation.validateName(name)
-            XCTAssertTrue(result)
+        let name = " Name with space"
+        let result = validation.validateName(name)
+        XCTAssertTrue(result)
        }
     
     func testValidateHoursInvalid(){
@@ -97,6 +97,5 @@ class ValidationTests: XCTestCase {
         let hoursString = "25"
         let result = validation.validateHoursInADay(hoursString)
         XCTAssertFalse(result)
-
     }
 }

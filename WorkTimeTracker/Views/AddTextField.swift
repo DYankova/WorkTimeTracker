@@ -23,19 +23,17 @@ class AddTextField : UITextField {
       
     func setup(){
         placeholder = "Add new"
-        translatesAutoresizingMaskIntoConstraints = false
         layer.borderWidth = 1
         layer.borderColor = UIColor.lightGray.cgColor
-        backgroundColor = .clear
         font = .systemFont(ofSize: 16)
         layer.cornerRadius = 4
         textColor = .black
-        isUserInteractionEnabled = true
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
-  override open func textRect(forBounds bounds: CGRect) -> CGRect {
-    return bounds.inset(by: padding)
- }
+      override open func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+     }
 
     override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)

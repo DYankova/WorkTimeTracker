@@ -9,6 +9,7 @@
 import UIKit
 
 class AllProjectsViewModel: Codable {
+    
     var projects = [ProjectViewModel]()
     
     init() {
@@ -24,4 +25,5 @@ class AllProjectsViewModel: Codable {
     func deleteProject(_ sender: Int){
         self.projects.remove(at: sender)
     }
+    
 }

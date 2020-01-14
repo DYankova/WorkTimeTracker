@@ -11,7 +11,7 @@ import UIKit
 class ProjectViewModel: Codable, Equatable {
    
     let project: Project
-    var workLogs : [WorkLog]
+    var workLogs: [WorkLog]
      
     init(_ project: Project, workLogs : [WorkLog]) {
         self.project = project
@@ -41,7 +41,7 @@ class ProjectViewModel: Codable, Equatable {
     func deleteWorkLog(_ sender: Int){
         self.workLogs.remove(at: sender)
     }
-     //Test
+    
     func convertHours(_ hoursText : String) -> Double {
         return hoursText.toDouble()
     }
@@ -50,5 +50,4 @@ class ProjectViewModel: Codable, Equatable {
          return lhs.name == rhs.name
      }
      
-    
 }

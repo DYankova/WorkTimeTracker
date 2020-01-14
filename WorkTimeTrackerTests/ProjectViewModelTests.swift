@@ -21,13 +21,13 @@ class ProjectViewModelTests: XCTestCase {
     }
 
     override func tearDown() {
-       projectViewModel = nil
+        projectViewModel = nil
     }
 
     func testCalculateTotalHoursWithEmptyWorkLogs(){
         projectViewModel.workLogs = []
         let result = projectViewModel.calculateTotalHours()
-         XCTAssertEqual(result, 0)
+        XCTAssertEqual(result, 0)
     }
     
     func testCalculateTotalHoursWithWorkLogs(){
@@ -42,9 +42,9 @@ class ProjectViewModelTests: XCTestCase {
     }
     
     func testAddToWorkLogsWhenExists(){
-       let workLog = WorkLog(23, "2016/07/27")
-       projectViewModel.addWorkLog(workLog)
-       XCTAssertEqual(projectViewModel.workLogs[0].hours, workLog.hours)
+        let workLog = WorkLog(23, "2016/07/27")
+        projectViewModel.addWorkLog(workLog)
+        XCTAssertEqual(projectViewModel.workLogs[0].hours, workLog.hours)
    }
     
     func testDeleteFromProjects(){

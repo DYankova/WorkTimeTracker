@@ -15,6 +15,25 @@ class WorkLogsListViewController:  UIViewController {
     
     lazy var validation = Validation()
     
+    lazy var closeButton: UIButton = {
+         let btn = UIButton()
+         if let image = UIImage(named: "close") {
+             btn.setImage(image, for: .normal)
+         }
+         btn.translatesAutoresizingMaskIntoConstraints = false
+         return btn
+    }()
+
+    lazy var dateTextField = AddTextField()
+       
+    lazy var workHoursTextField :  AddTextField = {
+        let textField =  AddTextField()
+        textField.placeholder = "0 h"
+        return textField
+    }()
+    
+    lazy var addButton = AddButton()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -23,38 +42,19 @@ class WorkLogsListViewController:  UIViewController {
         return cv
      }()
     
-    lazy var dateTextField = AddTextField()
-       
-    lazy var workHoursTextField :  AddTextField = {
-        let textField =  AddTextField()
-        textField.placeholder = "0 h"
-        return textField
-    }()
-
-    lazy var closeButton: UIButton = {
-        let btn = UIButton()
-        if let image = UIImage(named: "close") {
-            btn.setImage(image, for: .normal)
-        }
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
     lazy var datePicker = UIDatePicker()
     
-    lazy var addButton = AddButton()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.modalPresentationStyle = .fullScreen
+        
         view.backgroundColor = Constants.backgroundColor
         
+        view.addSubview(closeButton)
         view.addSubview(dateTextField)
         view.addSubview(workHoursTextField)
         view.addSubview(addButton)
         view.addSubview(collectionView)
-        view.addSubview(closeButton)
-       
+
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
@@ -62,9 +62,6 @@ class WorkLogsListViewController:  UIViewController {
         
         setupConstraints()
         showDatePicker()
-    }
-    @objc func close() {
-       self.dismiss(animated: true, completion: nil)
     }
     
     func setupConstraints() {
@@ -83,7 +80,7 @@ class WorkLogsListViewController:  UIViewController {
         workHoursTextField.topAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
         workHoursTextField.rightAnchor.constraint(equalTo: addButton.leftAnchor, constant: -10).isActive = true
         workHoursTextField.heightAnchor.constraint(equalToConstant:  Constants.cellHeight).isActive = true
-        workHoursTextField.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        workHoursTextField.widthAnchor.constraint(equalToConstant: Constants.cellHeight).isActive = true
                   
         dateTextField.topAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
         dateTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding).isActive = true
@@ -98,13 +95,12 @@ class WorkLogsListViewController:  UIViewController {
         
     @objc func addWorkLog(){
         if validation.validateAddToLogs(dateTextField.text ?? "", workHoursTextField.text ?? ""){
-            projectViewModel.addWorkLog( WorkLog( projectViewModel.convertHours(workHoursTextField.text ?? ""), dateTextField.text ?? ""))
+            projectViewModel.addWorkLog(WorkLog(projectViewModel.convertHours(workHoursTextField.text ?? ""), dateTextField.text ?? ""))
             Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
             collectionView.reloadData()
             addButton.backgroundColor = Constants.lightGray
         } else {
             addButton.backgroundColor = Constants.alertColor
-            return
         }
     }
     
@@ -112,6 +108,10 @@ class WorkLogsListViewController:  UIViewController {
         projectViewModel.deleteWorkLog(sender.tag)
         Defaults.sharedInstance.encodeProjects(projectViewModels.projects)
         collectionView.reloadData()
+    }
+    
+    @objc func close() {
+       self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -129,17 +129,14 @@ extension WorkLogsListViewController:  UICollectionViewDataSource {
         wotkLogCell.deleteButton.addTarget(self, action: #selector(deleteRecord(sender:)), for: .touchUpInside)
         return wotkLogCell
     }
+    
 }
 
 extension WorkLogsListViewController:  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return CGSize(width: collectionView.frame.width, height:  Constants.cellHeight)
    }
- 
-  override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
-  }
+
 }
 
 extension WorkLogsListViewController {
@@ -149,7 +146,7 @@ extension WorkLogsListViewController {
         datePicker.addTarget(self, action: #selector (dateChanged(datePicker:)), for: .allEvents)
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
 
@@ -163,12 +160,13 @@ extension WorkLogsListViewController {
         dateTextField.text = Formatter.formatter.string(from: datePicker.date)
     }
     
-  @objc func donedatePicker(){
+  @objc func doneDatePicker(){
         dateTextField.text = Formatter.formatter.string(from: datePicker.date)
         self.view.endEditing(true)
  }
 
  @objc func cancelDatePicker(){
         self.view.endEditing(true)
-      }
+  }
+    
 }

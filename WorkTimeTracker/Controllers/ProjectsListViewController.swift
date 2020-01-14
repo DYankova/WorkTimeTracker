@@ -47,21 +47,20 @@ class ProjectsListViewController: UIViewController {
     }
    
     func setupConstraints() {
-        //TOP CONSTRAINT - CONSTANTS
-        addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+        addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.cellHeight).isActive = true
         addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -Constants.padding).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
         addButton.heightAnchor.constraint(equalToConstant: Constants.cellHeight).isActive = true
-        addButton.addTarget(self, action: #selector(addProject), for: UIControl.Event.touchUpInside)
+        addButton.addTarget(self, action: #selector(addProject), for: .touchUpInside)
            
         projectTitleTextField.topAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
+        projectTitleTextField.rightAnchor.constraint(equalTo: addButton.leftAnchor, constant: -Constants.padding).isActive = true
         projectTitleTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.padding).isActive = true
         projectTitleTextField.heightAnchor.constraint(equalToConstant:  Constants.cellHeight).isActive = true
-        projectTitleTextField.rightAnchor.constraint(equalTo: addButton.leftAnchor, constant: -Constants.padding).isActive = true
        
         collectionView.topAnchor.constraint(equalTo: projectTitleTextField.bottomAnchor, constant: Constants.padding).isActive = true
-        collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
         
@@ -73,7 +72,6 @@ class ProjectsListViewController: UIViewController {
             addButton.backgroundColor = Constants.lightGray
         } else {
             addButton.backgroundColor = Constants.alertColor
-            return
         }
     }
     
@@ -95,9 +93,10 @@ extension ProjectsListViewController:  UICollectionViewDataSource {
         projectCell.projectName.text = projectViewModels.projects[indexPath.item].name
         projectCell.totalHoursLabel.text = String(projectViewModels.projects[indexPath.item].totaHours)
         projectCell.deleteButton.tag = indexPath.item
-        projectCell.deleteButton.addTarget(self, action: #selector(deleteRecord(sender:)), for: UIControl.Event.touchUpInside)
+        projectCell.deleteButton.addTarget(self, action: #selector(deleteRecord(sender:)), for: .touchUpInside)
         return projectCell
     }
+    
 }
 
 extension ProjectsListViewController:  UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -106,19 +105,12 @@ extension ProjectsListViewController:  UICollectionViewDelegate, UICollectionVie
    }
            
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-       let project = projectViewModels.projects[indexPath.item]
-       let controller =  WorkLogsListViewController()
-       controller.projectViewModel = project
-       controller.projectViewModels.projects  = projectViewModels.projects
-       controller.modalPresentationStyle = .fullScreen
-       self.present(controller, animated: true, completion: nil)
+       let currentProject = projectViewModels.projects[indexPath.item]
+       let workLogsListViewController =  WorkLogsListViewController()
+       workLogsListViewController.projectViewModel = currentProject
+       workLogsListViewController.projectViewModels.projects  = projectViewModels.projects
+       workLogsListViewController.modalPresentationStyle = .fullScreen
+       self.present(workLogsListViewController, animated: true, completion: nil)
    }
-    
-  override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-   
-      // Dispose of any resources that can be recreated.
-  }
-          
+      
 }
